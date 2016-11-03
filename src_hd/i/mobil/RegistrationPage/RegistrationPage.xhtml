@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile">
+<h:body>
+	<ui:composition template="/layouts/basic.xhtml">
+		<ui:define name="title">RegistrationPage</ui:define>
+		<ui:define name="content">
+			<h:form id="form">
+				<h:panelGrid columns="1">
+					<h:panelGrid columns="2">
+						<f:facet name="header">
+							<p:messages></p:messages>
+						</f:facet>
+						<p:panelGrid columns="2">
+							<p:fieldset
+								legend="#{ivy.cms.co('/Project/personalInformation')}">
+								<p:panelGrid columns="2">
+									<p:outputLabel value="#{ivy.cms.co('/Project/fullName')}" />
+									<p:inputText value="#{data.personal.fullName}" />
+									<p:outputLabel value="#{ivy.cms.co('/Project/id')}" />
+									<p:inputText value="#{data.personal.id}"/>
+									<p:outputLabel value="#{ivy.cms.co('/Project/birthDay')}" />
+									<p:calendar value="#{data.personal.birthDay}"/>
+									<p:outputLabel value="#{ivy.cms.co('/Project/email')}" />
+									<p:inputText value="#{data.personal.email}"/>
+									<p:outputLabel value="#{ivy.cms.co('/Project/address')}" />
+									<p:inputTextarea value="#{data.personal.address}"/>
+								</p:panelGrid>
+							</p:fieldset>
+							<p:fieldset
+								legend="#{ivy.cms.co('/Project/motobikeInformation')}">
+								<p:panelGrid columns="2">
+									<p:outputLabel value="#{ivy.cms.co('/Project/type')}" />
+									<p:inputText value="#{data.motobike.type}" />
+									<p:outputLabel value="#{ivy.cms.co('/Project/chassisNumber')}" />
+									<p:inputText value="#{data.motobike.chassicNumber}"/>
+									<p:outputLabel value="#{ivy.cms.co('/Project/chassisFrameNumber')}" />
+									<p:inputText value="#{data.motobike.chassicFrameNumber}"/>
+									<p:outputLabel value="#{ivy.cms.co('/Project/description')}" />
+									<p:inputTextarea value="#{data.motobike.description}"/>
+								</p:panelGrid>
+
+							</p:fieldset>
+						</p:panelGrid>
+					</h:panelGrid>
+
+					<h:panelGrid columns="2">
+						<p:panelGrid columns="2">
+							<p:fieldset legend="#{ivy.cms.co('/Project/requestNumberPlate')}">
+								<h:outputText>37X1-3734</h:outputText>
+							</p:fieldset>
+						</p:panelGrid>
+					</h:panelGrid>
+				</h:panelGrid>
+<p:commandButton actionListener="#{logic.close}" value="Close" update="form" icon="ui-icon-check" />
+			</h:form>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

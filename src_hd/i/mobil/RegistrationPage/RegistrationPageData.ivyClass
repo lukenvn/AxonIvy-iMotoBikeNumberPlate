@@ -1,0 +1,6 @@
+RegistrationPageData #class
+i.mobil.RegistrationPage #namespace
+personal i.mobil.model.Personal #field
+personal PERSISTENT #fieldModifier
+motobike i.mobil.model.Motobike #field
+motobike PERSISTENT #fieldModifier
