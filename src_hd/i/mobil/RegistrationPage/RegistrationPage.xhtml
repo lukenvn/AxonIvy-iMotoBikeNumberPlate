@@ -10,12 +10,28 @@
 	<ui:composition template="/layouts/registerInformation.xhtml">
 		<ui:define name="title">RegistrationPage</ui:define>
 		<ui:define name="rolesAction">
+			<p:messages></p:messages>
 			<p:panelGrid columns="2">
-				<p:commandButton value="Generate" />
-				<p:commandButton value="Submit" />
+				<p:commandButton id="generateButton" value="Generate"
+					actionListener="#{logic.generateMotobikeNumberPlate}"
+					update="requestNumberPlateFiled" 
+					disabled="#{data.motobikeNumberPlate !=null}" />
+				<p:commandButton id="submitButton" value="Submit"
+					onclick="PF('submitDialog').show();"
+					rendered="#{data.motobikeNumberPlate !=null}">
+				</p:commandButton>
 			</p:panelGrid>
+			<p:confirmDialog id="submitDialog" widgetVar="submitDialog" message="Are you sure?"
+				global="true" showEffect="fade" hideEffect="fade">
+				<p:commandButton value="Yes" 
+					styleClass="ui-confirmdialog-yes" icon="ui-icon-check"
+					actionListener="#{logic.submit}" />
+				<p:commandButton value="No"
+					styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+			</p:confirmDialog>
 		</ui:define>
 
 	</ui:composition>
+
 </h:body>
 </html>
