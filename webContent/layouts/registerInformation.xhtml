@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title><ui:insert name="title">Ivy Html Dialog</ui:insert></title>
+	<link rel="shortcut icon"
+		href="#{resource['ivy-webcontent:layouts/images/ivy_favicon_48.png']}" />
+
+	<!-- You can also load bootstrap from an external CDN: https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css -->
+	<h:outputStylesheet
+		name="layouts/styles/bootstrap-modified-for-jsf.css" />
+	<h:outputStylesheet name="layouts/styles/bootstrap-reset.css" />
+	<h:outputStylesheet name="layouts/styles/ivy-common-6.css" />
+
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.js"></script>
+  <![endif]-->
+</h:head>
+<h:body>
+	<ui:composition template="/layouts/basic.xhtml">
+		<ui:define name="title">RegistrationPage</ui:define>
+		<ui:define name="content">
+			<h:form id="form">
+				<h:panelGrid columns="1">
+					<h:panelGrid columns="2">
+						<f:facet name="header">
+							<p:messages></p:messages>
+						</f:facet>
+						<p:panelGrid columns="2">
+							<p:fieldset
+								legend="#{ivy.cms.co('/Project/personalInformation')}">
+								<p:panelGrid columns="2">
+									<p:outputLabel value="#{ivy.cms.co('/Project/fullName')}" />
+									<p:inputText value="#{data.personal.fullName}" />
+									<p:outputLabel value="#{ivy.cms.co('/Project/id')}" />
+									<p:inputText value="#{data.personal.id}" />
+									<p:outputLabel value="#{ivy.cms.co('/Project/birthDay')}" />
+									<p:calendar value="#{data.personal.birthDay}" />
+									<p:outputLabel value="#{ivy.cms.co('/Project/email')}" />
+									<p:inputText value="#{data.personal.email}" />
+									<p:outputLabel value="#{ivy.cms.co('/Project/address')}" />
+									<p:inputTextarea value="#{data.personal.address}" />
+								</p:panelGrid>
+							</p:fieldset>
+							<p:fieldset
+								legend="#{ivy.cms.co('/Project/motobikeInformation')}">
+								<p:panelGrid columns="2">
+									<p:outputLabel value="#{ivy.cms.co('/Project/type')}" />
+									<p:inputText value="#{data.motobike.type}" />
+									<p:outputLabel value="#{ivy.cms.co('/Project/chassisNumber')}" />
+									<p:inputText value="#{data.motobike.chassicNumber}" />
+									<p:outputLabel
+										value="#{ivy.cms.co('/Project/chassisFrameNumber')}" />
+									<p:inputText value="#{data.motobike.chassicFrameNumber}" />
+									<p:outputLabel value="#{ivy.cms.co('/Project/description')}" />
+									<p:inputTextarea value="#{data.motobike.description}" />
+								</p:panelGrid>
+
+							</p:fieldset>
+						</p:panelGrid>
+					</h:panelGrid>
+
+					<h:panelGrid columns="2">
+						<p:panelGrid columns="2">
+							<p:fieldset id="requestNumberPlateFiled" legend="#{ivy.cms.co('/Project/requestNumberPlate')}">
+								<p:panelGrid columns="1">
+									<h:outputText id="motobikeNumberPlateText"
+										value="#{data.motobikeNumberPlate}" />
+								</p:panelGrid>
+								<ui:insert name="rolesAction">
+
+								</ui:insert>
+
+							</p:fieldset>
+						</p:panelGrid>
+					</h:panelGrid>
+				</h:panelGrid>
+			</h:form>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

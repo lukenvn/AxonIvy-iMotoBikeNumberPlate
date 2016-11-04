@@ -1,5 +1,5 @@
-MotoBikeNumberRegistrationData #class
-i.mobil #namespace
+ApprovingPageData #class
+i.mobil.ApprovingPage #namespace
 personal i.mobil.model.Personal #field
 personal PERSISTENT #fieldModifier
 motobike i.mobil.model.Motobike #field

@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Nov 03 18:00:12 ICT 2016]
+[>Created: Fri Nov 04 14:28:21 ICT 2016]
 158297BD29ACB0F7 3.18 #module
 >Proto >Proto Collection #zClass
 Rs0 RegistrationPageProcess Big #zClass
@@ -23,6 +23,11 @@ Rs0 @PushWFArc f5 '' #zField
 Rs0 @GridStep f6 '' #zField
 Rs0 @PushWFArc f7 '' #zField
 Rs0 @PushWFArc f2 '' #zField
+Rs0 @RichDialogProcessStart f8 '' #zField
+Rs0 @RichDialogProcessEnd f9 '' #zField
+Rs0 @GridStep f11 '' #zField
+Rs0 @PushWFArc f12 '' #zField
+Rs0 @PushWFArc f10 '' #zField
 >Proto Rs0 Rs0 RegistrationPageProcess #zField
 Rs0 f0 guid 158297BD2B94BDF2 #txt
 Rs0 f0 type i.mobil.RegistrationPage.RegistrationPageData #txt
@@ -31,10 +36,11 @@ Rs0 f0 disableUIEvents true #txt
 Rs0 f0 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
 <> param = methodEvent.getInputArguments();
 ' #txt
-Rs0 f0 outParameterDecl '<i.mobil.model.Personal personal,i.mobil.model.Motobike motobike> result;
+Rs0 f0 outParameterDecl '<i.mobil.model.Personal personal,i.mobil.model.Motobike motobike,java.lang.String motobikeNumberPlate> result;
 ' #txt
 Rs0 f0 outParameterMapAction 'result.personal=in.personal;
 result.motobike=in.motobike;
+result.motobikeNumberPlate=in.motobikeNumberPlate;
 ' #txt
 Rs0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -59,18 +65,20 @@ Rs0 f3 actionTable 'out=in;
 Rs0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>close</name>
+        <name>submit</name>
+        <nameStyle>6,5,7
+</nameStyle>
     </language>
 </elementInfo>
 ' #txt
-Rs0 f3 83 147 26 26 -15 12 #rect
+Rs0 f3 83 443 26 26 -19 15 #rect
 Rs0 f3 @|RichDialogProcessStartIcon #fIcon
 Rs0 f4 type i.mobil.RegistrationPage.RegistrationPageData #txt
 Rs0 f4 guid 158297BD2C69D252 #txt
-Rs0 f4 211 147 26 26 0 12 #rect
+Rs0 f4 251 443 26 26 0 12 #rect
 Rs0 f4 @|RichDialogEndIcon #fIcon
 Rs0 f5 expr out #txt
-Rs0 f5 109 160 211 160 #arcP
+Rs0 f5 109 456 251 456 #arcP
 Rs0 f6 actionDecl 'i.mobil.RegistrationPage.RegistrationPageData out;
 ' #txt
 Rs0 f6 actionTable 'out=in;
@@ -95,8 +103,78 @@ Rs0 f7 expr out #txt
 Rs0 f7 109 64 168 64 #arcP
 Rs0 f2 expr out #txt
 Rs0 f2 280 64 339 64 #arcP
+Rs0 f8 guid 1582E1E4EA24099C #txt
+Rs0 f8 type i.mobil.RegistrationPage.RegistrationPageData #txt
+Rs0 f8 actionDecl 'i.mobil.RegistrationPage.RegistrationPageData out;
+' #txt
+Rs0 f8 actionTable 'out=in;
+' #txt
+Rs0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>generateMotobikeNumberPlate</name>
+        <nameStyle>27,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Rs0 f8 83 275 26 26 -85 15 #rect
+Rs0 f8 @|RichDialogProcessStartIcon #fIcon
+Rs0 f9 type i.mobil.RegistrationPage.RegistrationPageData #txt
+Rs0 f9 555 275 26 26 0 12 #rect
+Rs0 f9 @|RichDialogProcessEndIcon #fIcon
+Rs0 f11 actionDecl 'i.mobil.RegistrationPage.RegistrationPageData out;
+' #txt
+Rs0 f11 actionTable 'out=in;
+' #txt
+Rs0 f11 actionCode 'import i.mobil.service.DefaultNumberPlateService;
+import i.mobil.service.NumberPlateService;
+
+
+
+NumberPlateService numberPlateService = new DefaultNumberPlateService();
+in.motobikeNumberPlate = numberPlateService.generateNumberPlate();
+' #txt
+Rs0 f11 type i.mobil.RegistrationPage.RegistrationPageData #txt
+Rs0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Generate Number</name>
+        <nameStyle>15,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Rs0 f11 288 266 112 44 -49 -8 #rect
+Rs0 f11 @|StepIcon #fIcon
+Rs0 f12 expr out #txt
+Rs0 f12 109 288 288 288 #arcP
+Rs0 f10 expr out #txt
+Rs0 f10 400 288 555 288 #arcP
 >Proto Rs0 .type i.mobil.RegistrationPage.RegistrationPageData #txt
 >Proto Rs0 .processKind HTML_DIALOG #txt
+>Proto Rs0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <swimlaneLabel>Initialize</swimlaneLabel>
+        <swimlaneLabel>Genereate Number Event</swimlaneLabel>
+        <swimlaneLabel>Submit Event</swimlaneLabel>
+    </language>
+    <swimlaneOrientation>false</swimlaneOrientation>
+    <swimlaneSize>192</swimlaneSize>
+    <swimlaneSize>192</swimlaneSize>
+    <swimlaneSize>192</swimlaneSize>
+    <swimlaneColor gradient="false">-3355444</swimlaneColor>
+    <swimlaneColor gradient="false">-6684673</swimlaneColor>
+    <swimlaneColor gradient="false">-6697729</swimlaneColor>
+    <swimlaneType>LANE</swimlaneType>
+    <swimlaneType>LANE</swimlaneType>
+    <swimlaneType>LANE</swimlaneType>
+    <swimlaneSpaceBefore>0</swimlaneSpaceBefore>
+    <swimlaneSpaceBefore>0</swimlaneSpaceBefore>
+    <swimlaneSpaceBefore>0</swimlaneSpaceBefore>
+</elementInfo>
+' #txt
 >Proto Rs0 -8 -8 16 16 16 26 #rect
 >Proto Rs0 '' #fIcon
 Rs0 f3 mainOut f5 tail #connect
@@ -105,3 +183,7 @@ Rs0 f0 mainOut f7 tail #connect
 Rs0 f7 head f6 mainIn #connect
 Rs0 f6 mainOut f2 tail #connect
 Rs0 f2 head f1 mainIn #connect
+Rs0 f8 mainOut f12 tail #connect
+Rs0 f12 head f11 mainIn #connect
+Rs0 f11 mainOut f10 tail #connect
+Rs0 f10 head f9 mainIn #connect

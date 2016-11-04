@@ -4,28 +4,28 @@
     <startMethod>
         <name>start</name>
         <description>Default dialog start method.</description>
-        <outputParameter>
+        <inputParameter>
             <name>personal</name>
             <description></description>
             <parameterType>i.mobil.model.Personal</parameterType>
             <nullPermitted>false</nullPermitted>
-        </outputParameter>
-        <outputParameter>
+        </inputParameter>
+        <inputParameter>
             <name>motobike</name>
             <description></description>
             <parameterType>i.mobil.model.Motobike</parameterType>
             <nullPermitted>false</nullPermitted>
-        </outputParameter>
-        <outputParameter>
+        </inputParameter>
+        <inputParameter>
             <name>motobikeNumberPlate</name>
             <description></description>
             <parameterType>String</parameterType>
             <nullPermitted>false</nullPermitted>
-        </outputParameter>
+        </inputParameter>
     </startMethod>
     <property>
         <name>guid</name>
-        <value>158297BD2A9C5651</value>
+        <value>1582DACC92FA29D8</value>
         <readOnly>true</readOnly>
     </property>
     <property>
