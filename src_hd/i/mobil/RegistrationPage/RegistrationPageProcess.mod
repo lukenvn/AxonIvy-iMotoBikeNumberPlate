@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Nov 03 18:00:12 ICT 2016]
+[>Created: Fri Nov 04 11:31:32 ICT 2016]
 158297BD29ACB0F7 3.18 #module
 >Proto >Proto Collection #zClass
 Rs0 RegistrationPageProcess Big #zClass
@@ -31,10 +31,11 @@ Rs0 f0 disableUIEvents true #txt
 Rs0 f0 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
 <> param = methodEvent.getInputArguments();
 ' #txt
-Rs0 f0 outParameterDecl '<i.mobil.model.Personal personal,i.mobil.model.Motobike motobike> result;
+Rs0 f0 outParameterDecl '<i.mobil.model.Personal personal,i.mobil.model.Motobike motobike,java.lang.String motobikeNumberPlate> result;
 ' #txt
 Rs0 f0 outParameterMapAction 'result.personal=in.personal;
 result.motobike=in.motobike;
+result.motobikeNumberPlate=in.motobikeNumberPlate;
 ' #txt
 Rs0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>

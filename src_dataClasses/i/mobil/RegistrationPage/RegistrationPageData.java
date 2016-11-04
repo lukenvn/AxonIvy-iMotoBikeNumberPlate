@@ -7,27 +7,7 @@ package i.mobil.RegistrationPage;
 public class RegistrationPageData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 5071358380773932218L;
-
-  private i.mobil.model.Personal personal;
-
-  /**
-   * Gets the field personal.
-   * @return the value of the field personal; may be null.
-   */
-  public i.mobil.model.Personal getPersonal()
-  {
-    return personal;
-  }
-
-  /**
-   * Sets the field personal.
-   * @param _personal the new value of the field personal.
-   */
-  public void setPersonal(i.mobil.model.Personal _personal)
-  {
-    personal = _personal;
-  }
+  private static final long serialVersionUID = -8373601482552603661L;
 
   private i.mobil.model.Motobike motobike;
 
@@ -47,6 +27,46 @@ public class RegistrationPageData extends ch.ivyteam.ivy.scripting.objects.Compo
   public void setMotobike(i.mobil.model.Motobike _motobike)
   {
     motobike = _motobike;
+  }
+
+  private java.lang.String motobikeNumberPlate;
+
+  /**
+   * Gets the field motobikeNumberPlate.
+   * @return the value of the field motobikeNumberPlate; may be null.
+   */
+  public java.lang.String getMotobikeNumberPlate()
+  {
+    return motobikeNumberPlate;
+  }
+
+  /**
+   * Sets the field motobikeNumberPlate.
+   * @param _motobikeNumberPlate the new value of the field motobikeNumberPlate.
+   */
+  public void setMotobikeNumberPlate(java.lang.String _motobikeNumberPlate)
+  {
+    motobikeNumberPlate = _motobikeNumberPlate;
+  }
+
+  private i.mobil.model.Personal personal;
+
+  /**
+   * Gets the field personal.
+   * @return the value of the field personal; may be null.
+   */
+  public i.mobil.model.Personal getPersonal()
+  {
+    return personal;
+  }
+
+  /**
+   * Sets the field personal.
+   * @param _personal the new value of the field personal.
+   */
+  public void setPersonal(i.mobil.model.Personal _personal)
+  {
+    personal = _personal;
   }
 
 }

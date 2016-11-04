@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<userConfig/>
+<userConfig>
+    <user>
+        <username>jim gordon</username>
+        <password>123456</password>
+        <role>Policement</role>
+    </user>
+    <user>
+        <username>bruce wayne</username>
+    </user>
+</userConfig>
