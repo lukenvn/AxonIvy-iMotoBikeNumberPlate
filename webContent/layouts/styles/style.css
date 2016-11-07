@@ -1,5 +1,15 @@
-.info-component{
-	height: 400px;
-	width: 300px;
-	padding: 20px
+.child-info-component{
+	height: 550px;
+}
+.infoComponent{
+	width: 700px
+}
+.numberComponentFieldSet{
+	width:96.5%
+}
+.motobikeNumberPlate{
+	 margin-left: 240px
+}
+.motobikeNumberPlateText{
+	 font-size:xx-large;
 }
