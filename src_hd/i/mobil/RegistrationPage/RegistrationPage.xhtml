@@ -10,12 +10,12 @@
 	<ui:composition template="/layouts/registerInformation.xhtml">
 		<ui:define name="title">RegistrationPage</ui:define>
 		<ui:define name="rolesAction">
-			<p:messages></p:messages>
+			<!-- <p:messages></p:messages> -->
 			<p:panelGrid columns="2">
 				<p:commandButton id="generateButton" value="Generate"
 					actionListener="#{logic.generateMotobikeNumberPlate}"
-					update="requestNumberPlateFiled" 
-					disabled="#{data.motobikeNumberPlate !=null}" />
+					update="requestNumberPlateFiled registerForm" 
+					disabled="#{data.motobikeNumberPlate !=null}" validateClient="true"/>
 				<p:commandButton id="submitButton" value="Submit"
 					onclick="PF('submitDialog').show();"
 					rendered="#{data.motobikeNumberPlate !=null}">

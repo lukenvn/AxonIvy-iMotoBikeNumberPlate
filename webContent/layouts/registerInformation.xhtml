@@ -14,40 +14,80 @@
 			<h:outputStylesheet name="layouts/styles/style.css" />
 		</ui:define>
 		<ui:define name="content">
-			<h:form id="form">
+			<h:form id="registerForm">
 				<h:panelGrid columns="1">
 					<h:panelGrid columns="2">
 						<f:facet name="header">
-							<p:messages></p:messages>
+ 							<!-- <p:messages></p:messages> -->
 						</f:facet>
 						<p:panelGrid columns="2">
 							<p:fieldset styleClass="info-component"
 								legend="#{ivy.cms.co('/Project/personalInformation')} aaa">
 								<p:panelGrid columns="2">
 									<p:outputLabel value="#{ivy.cms.co('/Project/fullName')}" />
-									<p:inputText value="#{data.personal.fullName}" />
+									<p:inputText id="fullName" value="#{data.personal.fullName}" required="true" disabled="#{data.motobikeNumberPlate !=null}">
+										<f:validateLength maximum="100" />
+									</p:inputText>
+									<p:message for="fullName" display="text"/>
+									<br/>
 									<p:outputLabel value="#{ivy.cms.co('/Project/id')}" />
-									<p:inputText value="#{data.personal.id}" />
+									<p:inputText id="id" value="#{data.personal.id}" required="true" disabled="#{data.motobikeNumberPlate !=null}"
+													onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;">
+										<f:validateLength maximum="12" />
+									</p:inputText>
+									<p:message for="id" display="text"/>
+									<br/>
 									<p:outputLabel value="#{ivy.cms.co('/Project/birthDay')}" />
-									<p:calendar value="#{data.personal.birthDay}" />
-									<p:outputLabel value="#{ivy.cms.co('/Project/email')}" />
-									<p:inputText value="#{data.personal.email}" />
+									<p:calendar id="birthday" value="#{data.personal.birthDay}" required="true" disabled="#{data.motobikeNumberPlate !=null}">
+										<f:validator validatorId="ageValidator"/>
+									</p:calendar>
+									<p:message for="birthday" display="text"/>
+									<br/>
+									<p:outputLabel value="#{ivy.cms.co('/Project/email')}"/>
+									<p:inputText id="email" value="#{data.personal.email}" required="true" disabled="#{data.motobikeNumberPlate !=null}"
+										validatorMessage="Not a valid email format">
+										<f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+									</p:inputText>
+									<p:message for="email" display="text"/>
+									<br/>
 									<p:outputLabel value="#{ivy.cms.co('/Project/address')}" />
-									<p:inputTextarea value="#{data.personal.address}" />
+									<p:inputTextarea id="address" value="#{data.personal.address}" required="true" disabled="#{data.motobikeNumberPlate !=null}">
+										<f:validateLength maximum="255" />
+									</p:inputTextarea>
+									<p:message for="address" display="text"/>
+									<br/>
 								</p:panelGrid>
 							</p:fieldset>
 							<p:fieldset styleClass="info-component"
 								legend="#{ivy.cms.co('/Project/motobikeInformation')}">
 								<p:panelGrid columns="2">
 									<p:outputLabel value="#{ivy.cms.co('/Project/type')}" />
-									<p:inputText value="#{data.motobike.type}" />
+									<!-- <p:inputText id="type" value="#{data.motobike.type}" required="true" disabled="#{data.motobikeNumberPlate !=null}"/> -->
+									<p:selectOneMenu id="type" value="#{data.motobike.type}" required="true" disabled="#{data.motobikeNumberPlate !=null}">
+						                <f:selectItem itemLabel="Please choose" itemValue="" noSelectionOption="true" />
+						                <f:selectItems value="#{data.motobike.types}" />
+						            </p:selectOneMenu>
+									<p:message for="type" display="text"/>
+									<br/>
 									<p:outputLabel value="#{ivy.cms.co('/Project/chassisNumber')}" />
-									<p:inputText value="#{data.motobike.chassicNumber}" />
+									<p:inputText id="chasNum" value="#{data.motobike.chassicNumber}" required="true" disabled="#{data.motobikeNumberPlate !=null}">
+										<f:validateLength maximum="17" />
+									</p:inputText>
+									<p:message for="chasNum" display="text"/>
+									<br/>
 									<p:outputLabel
 										value="#{ivy.cms.co('/Project/chassisFrameNumber')}" />
-									<p:inputText value="#{data.motobike.chassicFrameNumber}" />
+									<p:inputText id="chasFramNum" value="#{data.motobike.chassicFrameNumber}" required="true" disabled="#{data.motobikeNumberPlate !=null}">
+										<f:validateLength maximum="17" />
+									</p:inputText>
+									<p:message for="chasFramNum" display="text"/>
+									<br/>
 									<p:outputLabel value="#{ivy.cms.co('/Project/description')}" />
-									<p:inputTextarea value="#{data.motobike.description}" />
+									<p:inputTextarea id="desc" value="#{data.motobike.description}" required="true" disabled="#{data.motobikeNumberPlate !=null}">
+										<f:validateLength maximum="100" />
+									</p:inputTextarea>
+									<p:message for="desc" display="text"/>
+									<br/>
 								</p:panelGrid>
 
 							</p:fieldset>
