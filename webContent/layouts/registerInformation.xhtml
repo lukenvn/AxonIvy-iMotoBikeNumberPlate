@@ -7,27 +7,12 @@
 	xmlns:ic="http://ivyteam.ch/jsf/component"
 	xmlns:p="http://primefaces.org/ui">
 
-<h:head>
-	<title><ui:insert name="title">Ivy Html Dialog</ui:insert></title>
-	<link rel="shortcut icon"
-		href="#{resource['ivy-webcontent:layouts/images/ivy_favicon_48.png']}" />
-
-	<!-- You can also load bootstrap from an external CDN: https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css -->
-	<h:outputStylesheet
-		name="layouts/styles/bootstrap-modified-for-jsf.css" />
-	<h:outputStylesheet name="layouts/styles/bootstrap-reset.css" />
-	<h:outputStylesheet name="layouts/styles/ivy-common-6.css" />
-
-
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.js"></script>
-  <![endif]-->
-</h:head>
 <h:body>
 	<ui:composition template="/layouts/basic.xhtml">
 		<ui:define name="title">RegistrationPage</ui:define>
+		<ui:define name="css">
+			<h:outputStylesheet name="layouts/styles/style.css" />
+		</ui:define>
 		<ui:define name="content">
 			<h:form id="form">
 				<h:panelGrid columns="1">
@@ -36,8 +21,8 @@
 							<p:messages></p:messages>
 						</f:facet>
 						<p:panelGrid columns="2">
-							<p:fieldset
-								legend="#{ivy.cms.co('/Project/personalInformation')}">
+							<p:fieldset styleClass="info-component"
+								legend="#{ivy.cms.co('/Project/personalInformation')} aaa">
 								<p:panelGrid columns="2">
 									<p:outputLabel value="#{ivy.cms.co('/Project/fullName')}" />
 									<p:inputText value="#{data.personal.fullName}" />
@@ -51,7 +36,7 @@
 									<p:inputTextarea value="#{data.personal.address}" />
 								</p:panelGrid>
 							</p:fieldset>
-							<p:fieldset
+							<p:fieldset styleClass="info-component"
 								legend="#{ivy.cms.co('/Project/motobikeInformation')}">
 								<p:panelGrid columns="2">
 									<p:outputLabel value="#{ivy.cms.co('/Project/type')}" />
@@ -71,7 +56,8 @@
 
 					<h:panelGrid columns="2">
 						<p:panelGrid columns="2">
-							<p:fieldset id="requestNumberPlateFiled" legend="#{ivy.cms.co('/Project/requestNumberPlate')}">
+							<p:fieldset id="requestNumberPlateFiled"
+								legend="#{ivy.cms.co('/Project/requestNumberPlate')}">
 								<p:panelGrid columns="1">
 									<h:outputText id="motobikeNumberPlateText"
 										value="#{data.motobikeNumberPlate}" />

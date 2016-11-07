@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Nov 04 13:40:54 ICT 2016]
+[>Created: Fri Nov 04 17:54:27 ICT 2016]
 1582942613099F76 3.18 #module
 >Proto >Proto Collection #zClass
 Mn0 MotoBikeNumberRegistration Big #zClass
@@ -40,10 +40,10 @@ Mn0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 </elementInfo>
 ' #txt
 Mn0 f0 @C|.responsibility Everybody #txt
-Mn0 f0 81 49 30 30 -21 17 #rect
+Mn0 f0 81 97 30 30 -21 17 #rect
 Mn0 f0 @|StartRequestIcon #fIcon
 Mn0 f1 type i.mobil.MotoBikeNumberRegistrationData #txt
-Mn0 f1 833 49 30 30 0 15 #rect
+Mn0 f1 833 97 30 30 0 15 #rect
 Mn0 f1 @|EndIcon #fIcon
 Mn0 f3 targetWindow NEW:card: #txt
 Mn0 f3 targetDisplay TOP #txt
@@ -71,10 +71,10 @@ Mn0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Mn0 f3 216 42 112 44 -49 -8 #rect
+Mn0 f3 216 90 112 44 -49 -8 #rect
 Mn0 f3 @|RichDialogIcon #fIcon
 Mn0 f4 expr out #txt
-Mn0 f4 111 64 216 64 #arcP
+Mn0 f4 111 112 216 112 #arcP
 Mn0 f6 targetWindow NEW:card: #txt
 Mn0 f6 targetDisplay TOP #txt
 Mn0 f6 richDialogId i.mobil.ApprovingPage #txt
@@ -102,10 +102,10 @@ Mn0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Mn0 f6 616 42 112 44 -43 -8 #rect
+Mn0 f6 616 90 112 44 -43 -8 #rect
 Mn0 f6 @|RichDialogIcon #fIcon
 Mn0 f2 expr out #txt
-Mn0 f2 728 64 833 64 #arcP
+Mn0 f2 728 112 833 112 #arcP
 Mn0 f5 actionDecl 'i.mobil.MotoBikeNumberRegistrationData out;
 ' #txt
 Mn0 f5 actionTable 'out=in1;
@@ -145,15 +145,15 @@ Mn0 f5 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Mn0 f5 433 49 30 30 -66 17 #rect
+Mn0 f5 433 97 30 30 -66 17 #rect
 Mn0 f5 @|TaskSwitchSimpleIcon #fIcon
 Mn0 f7 expr out #txt
 Mn0 f7 type i.mobil.MotoBikeNumberRegistrationData #txt
 Mn0 f7 var in1 #txt
-Mn0 f7 328 64 433 64 #arcP
+Mn0 f7 328 112 433 112 #arcP
 Mn0 f8 expr data #txt
 Mn0 f8 outCond ivp=="TaskA.ivp" #txt
-Mn0 f8 463 64 616 64 #arcP
+Mn0 f8 463 112 616 112 #arcP
 >Proto Mn0 .type i.mobil.MotoBikeNumberRegistrationData #txt
 >Proto Mn0 .processKind NORMAL #txt
 >Proto Mn0 0 0 32 24 18 0 #rect
