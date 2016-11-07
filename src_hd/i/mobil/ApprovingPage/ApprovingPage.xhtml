@@ -15,6 +15,13 @@
 				<p:commandButton value="Approve" />
 			</p:panelGrid>
 		</ui:define>
+		<ui:define name="userSessionContainer">
+			<div>
+				<p:outputLabel value="Welcome"/>
+				<p:outputLabel value="#{ivy.session.sessionUserName}" style="color: blue; margin-left: 10px; margin-right: 10px;"/>
+				<p:commandButton value="Logout" actionListener="#{logic.logout}"/>
+			</div>
+		</ui:define>
 	</ui:composition>
 </h:body>
 </html>

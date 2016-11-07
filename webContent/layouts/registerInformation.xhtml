@@ -54,7 +54,7 @@
 									<p:message for="id" display="text"/>
 									<br/>
 									<p:outputLabel value="#{ivy.cms.co('/Project/birthDay')}" />
-									<p:calendar id="birthday" value="#{data.personal.birthDay}" required="true" disabled="#{data.motobikeNumberPlate !=null}">
+									<p:calendar id="birthday" value="#{data.personal.birthDay}" required="true" readonlyInput="true" navigator="true" yearRange="1900:2016" disabled="#{data.motobikeNumberPlate !=null}">
 										<f:validator validatorId="ageValidator"/>
 									</p:calendar>
 									<p:message for="birthday" display="text"/>
