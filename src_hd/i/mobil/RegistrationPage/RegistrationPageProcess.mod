@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Nov 08 16:15:07 ICT 2016]
+[>Created: Tue Nov 08 15:53:20 ICT 2016]
 158297BD29ACB0F7 3.18 #module
 >Proto >Proto Collection #zClass
 Rs0 RegistrationPageProcess Big #zClass
@@ -27,6 +27,8 @@ Rs0 @RichDialogProcessEnd f9 '' #zField
 Rs0 @GridStep f11 '' #zField
 Rs0 @PushWFArc f12 '' #zField
 Rs0 @PushWFArc f10 '' #zField
+Rs0 @GridStep f13 '' #zField
+Rs0 @PushWFArc f14 '' #zField
 Rs0 @PushWFArc f5 '' #zField
 >Proto Rs0 Rs0 RegistrationPageProcess #zField
 Rs0 f0 guid 158297BD2B94BDF2 #txt
@@ -75,7 +77,7 @@ Rs0 f3 83 443 26 26 -19 15 #rect
 Rs0 f3 @|RichDialogProcessStartIcon #fIcon
 Rs0 f4 type i.mobil.RegistrationPage.RegistrationPageData #txt
 Rs0 f4 guid 158297BD2C69D252 #txt
-Rs0 f4 443 443 26 26 0 12 #rect
+Rs0 f4 403 443 26 26 0 12 #rect
 Rs0 f4 @|RichDialogEndIcon #fIcon
 Rs0 f6 actionDecl 'i.mobil.RegistrationPage.RegistrationPageData out;
 ' #txt
@@ -84,8 +86,7 @@ Rs0 f6 actionTable 'out=in;
 Rs0 f6 actionCode 'import i.mobil.model.Personal;
 import i.mobil.model.Motobike;
 in.motobike = new Motobike();
-in.personal = new Personal();
-ivy.log.debug("initialized");' #txt
+in.personal = new Personal();' #txt
 Rs0 f6 type i.mobil.RegistrationPage.RegistrationPageData #txt
 Rs0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -144,14 +145,40 @@ Rs0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Rs0 f11 286 266 112 44 -49 -8 #rect
+Rs0 f11 288 266 112 44 -49 -8 #rect
 Rs0 f11 @|StepIcon #fIcon
 Rs0 f12 expr out #txt
-Rs0 f12 109 288 286 288 #arcP
+Rs0 f12 109 288 288 288 #arcP
 Rs0 f10 expr out #txt
-Rs0 f10 398 288 555 288 #arcP
+Rs0 f10 400 288 555 288 #arcP
+Rs0 f13 actionDecl 'i.mobil.RegistrationPage.RegistrationPageData out;
+' #txt
+Rs0 f13 actionTable 'out=in;
+' #txt
+Rs0 f13 actionCode 'import i.mobil.service.DefaultSignalService;
+import i.mobil.service.SignalService;
+import i.mobil.model.SignalData;
+import ch.ivyteam.ivy.process.model.value.SignalCode;
+
+SignalService service = new DefaultSignalService();
+SignalData signalData = service.setDataForSignal(in.motobike, in.personal, in.motobikeNumberPlate);
+ivy.wf.signals().send(new SignalCode("task:created"), signalData);' #txt
+Rs0 f13 type i.mobil.RegistrationPage.RegistrationPageData #txt
+Rs0 f13 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Create Signal</name>
+        <nameStyle>13,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Rs0 f13 168 434 112 44 -37 -8 #rect
+Rs0 f13 @|StepIcon #fIcon
+Rs0 f14 expr out #txt
+Rs0 f14 109 456 168 456 #arcP
 Rs0 f5 expr out #txt
-Rs0 f5 109 456 443 456 #arcP
+Rs0 f5 280 456 403 456 #arcP
 >Proto Rs0 .type i.mobil.RegistrationPage.RegistrationPageData #txt
 >Proto Rs0 .processKind HTML_DIALOG #txt
 >Proto Rs0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -178,8 +205,6 @@ Rs0 f5 109 456 443 456 #arcP
 ' #txt
 >Proto Rs0 -8 -8 16 16 16 26 #rect
 >Proto Rs0 '' #fIcon
-Rs0 f3 mainOut f5 tail #connect
-Rs0 f5 head f4 mainIn #connect
 Rs0 f0 mainOut f7 tail #connect
 Rs0 f7 head f6 mainIn #connect
 Rs0 f6 mainOut f2 tail #connect
@@ -188,3 +213,7 @@ Rs0 f8 mainOut f12 tail #connect
 Rs0 f12 head f11 mainIn #connect
 Rs0 f11 mainOut f10 tail #connect
 Rs0 f10 head f9 mainIn #connect
+Rs0 f3 mainOut f14 tail #connect
+Rs0 f14 head f13 mainIn #connect
+Rs0 f13 mainOut f5 tail #connect
+Rs0 f5 head f4 mainIn #connect
