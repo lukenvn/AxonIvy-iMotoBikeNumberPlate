@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Nov 08 13:44:56 ICT 2016]
+[>Created: Tue Nov 08 16:15:07 ICT 2016]
 158297BD29ACB0F7 3.18 #module
 >Proto >Proto Collection #zClass
 Rs0 RegistrationPageProcess Big #zClass
@@ -144,12 +144,12 @@ Rs0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Rs0 f11 288 266 112 44 -49 -8 #rect
+Rs0 f11 286 266 112 44 -49 -8 #rect
 Rs0 f11 @|StepIcon #fIcon
 Rs0 f12 expr out #txt
-Rs0 f12 109 288 288 288 #arcP
+Rs0 f12 109 288 286 288 #arcP
 Rs0 f10 expr out #txt
-Rs0 f10 400 288 555 288 #arcP
+Rs0 f10 398 288 555 288 #arcP
 Rs0 f5 expr out #txt
 Rs0 f5 109 456 443 456 #arcP
 >Proto Rs0 .type i.mobil.RegistrationPage.RegistrationPageData #txt
