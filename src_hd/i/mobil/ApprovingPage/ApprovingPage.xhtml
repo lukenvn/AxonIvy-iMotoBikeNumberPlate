@@ -16,9 +16,9 @@
 			<h:panelGroup styleClass="navbar-right sessionComponent">
 				<h:outputText value="#{ivy.cms.co('/Project/welcome')}"/>
 				<p:outputLabel value="#{ivy.session.sessionUserName}" style="color: blue; margin-left: 10px; margin-right: 10px;"/>
-				<p:link value="#{ivy.cms.co('/Project/logout')}" actionListener="#{logic.logout}"/>
+
+				<p:commandLink value="#{ivy.cms.co('/Project/logout')}" actionListener="#{logic.logout}"  />
 			</h:panelGroup>
-			
 		</ui:define>
 		
 		<ui:define name="numberPlateInfo">
