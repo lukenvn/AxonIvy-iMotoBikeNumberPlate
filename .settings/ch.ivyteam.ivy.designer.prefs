@@ -1,4 +1,14 @@
 ch.ivyteam.ivy.designer.preferences.DataClassPreferencePage\:DEFAULT_DATA_CLASS=i.mobil.Data
 ch.ivyteam.ivy.designer.preferences.DataClassPreferencePage\:DEFAULT_NAMESPACE=i.mobil
+ch.ivyteam.ivy.designer.process.ui.preferences.EmailPreferencePage\:SMTP_ENCRYPTION_METHOD=SSL
+ch.ivyteam.ivy.designer.process.ui.preferences.EmailPreferencePage\:SMTP_HOST_NAME=smtp.gmail.com
+ch.ivyteam.ivy.designer.process.ui.preferences.EmailPreferencePage\:SMTP_PASSW=Lost4815162342
+ch.ivyteam.ivy.designer.process.ui.preferences.EmailPreferencePage\:SMTP_PORT=465
+ch.ivyteam.ivy.designer.process.ui.preferences.EmailPreferencePage\:SMTP_SSL_USE_KEY=true
+ch.ivyteam.ivy.designer.process.ui.preferences.EmailPreferencePage\:SMTP_TEST_FROM=nguyenbkcse@gmail.com
+ch.ivyteam.ivy.designer.process.ui.preferences.EmailPreferencePage\:SMTP_TEST_TO=ngovannhung@gmail.com
+ch.ivyteam.ivy.designer.process.ui.preferences.EmailPreferencePage\:SMTP_USER=nguyenbkcse@gmail.com
+ch.ivyteam.ivy.designer.process.ui.preferences.EmailPreferencePage\:SMTP_USE_DEFAULT_PORT=false
+ch.ivyteam.ivy.designer.process.ui.preferences.EmailPreferencePage\:useProjectSettings=true
 ch.ivyteam.ivy.project.preferences\:PROJECT_VERSION=61909
 eclipse.preferences.version=1

@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 07 15:50:43 ICT 2016]
+[>Created: Tue Nov 08 19:07:54 ICT 2016]
 1582DACC91FB4C22 3.18 #module
 >Proto >Proto Collection #zClass
 As0 ApprovingPageProcess Big #zClass
@@ -17,7 +17,6 @@ As0 @TextInP .xml .xml #zField
 As0 @TextInP .responsibility .responsibility #zField
 As0 @RichDialogInitStart f0 '' #zField
 As0 @RichDialogProcessEnd f1 '' #zField
-As0 @PushWFArc f2 '' #zField
 As0 @RichDialogProcessStart f3 '' #zField
 As0 @RichDialogEnd f4 '' #zField
 As0 @PushWFArc f5 '' #zField
@@ -26,6 +25,19 @@ As0 @RichDialogProcessEnd f7 '' #zField
 As0 @GridStep f9 '' #zField
 As0 @PushWFArc f10 '' #zField
 As0 @PushWFArc f8 '' #zField
+As0 @RichDialogProcessStart f11 '' #zField
+As0 @EMail f13 '' #zField
+As0 @PushWFArc f14 '' #zField
+As0 @RichDialogEnd f12 '' #zField
+As0 @PushWFArc f15 '' #zField
+As0 @EMail f16 '' #zField
+As0 @RichDialogEnd f17 '' #zField
+As0 @RichDialogProcessStart f18 '' #zField
+As0 @PushWFArc f19 '' #zField
+As0 @PushWFArc f20 '' #zField
+As0 @GridStep f21 '' #zField
+As0 @PushWFArc f22 '' #zField
+As0 @PushWFArc f2 '' #zField
 >Proto As0 As0 ApprovingPageProcess #zField
 As0 f0 guid 1582DACC93B92C5F #txt
 As0 f0 type i.mobil.ApprovingPage.ApprovingPageData #txt
@@ -52,10 +64,8 @@ As0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 As0 f0 83 51 26 26 -16 15 #rect
 As0 f0 @|RichDialogInitStartIcon #fIcon
 As0 f1 type i.mobil.ApprovingPage.ApprovingPageData #txt
-As0 f1 211 51 26 26 0 12 #rect
+As0 f1 339 51 26 26 0 12 #rect
 As0 f1 @|RichDialogProcessEndIcon #fIcon
-As0 f2 expr out #txt
-As0 f2 109 64 211 64 #arcP
 As0 f3 guid 1582DACC94BBF4C0 #txt
 As0 f3 type i.mobil.ApprovingPage.ApprovingPageData #txt
 As0 f3 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
@@ -69,14 +79,14 @@ As0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-As0 f3 83 147 26 26 -15 12 #rect
+As0 f3 91 443 26 26 -15 12 #rect
 As0 f3 @|RichDialogProcessStartIcon #fIcon
 As0 f4 type i.mobil.ApprovingPage.ApprovingPageData #txt
 As0 f4 guid 1582DACC94C4D1FD #txt
-As0 f4 211 147 26 26 0 12 #rect
+As0 f4 219 443 26 26 0 12 #rect
 As0 f4 @|RichDialogEndIcon #fIcon
 As0 f5 expr out #txt
-As0 f5 109 160 211 160 #arcP
+As0 f5 117 456 219 456 #arcP
 As0 f6 guid 1583DE986A65A91C #txt
 As0 f6 type i.mobil.ApprovingPage.ApprovingPageData #txt
 As0 f6 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
@@ -120,15 +130,158 @@ As0 f10 expr out #txt
 As0 f10 109 272 168 272 #arcP
 As0 f8 expr out #txt
 As0 f8 280 272 395 272 #arcP
+As0 f11 guid 158433D84739D225 #txt
+As0 f11 type i.mobil.ApprovingPage.ApprovingPageData #txt
+As0 f11 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
+' #txt
+As0 f11 actionTable 'out=in;
+' #txt
+As0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>approve</name>
+        <nameStyle>7,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+As0 f11 91 643 26 26 -22 15 #rect
+As0 f11 @|RichDialogProcessStartIcon #fIcon
+As0 f13 beanConfig '"{/emailSubject ""Inform Aprrove Email""/emailFrom ""asbx@asda.com""/emailReplyTo """"/emailTo ""<%=in.personal.email%>""/emailCC """"/emailBCC """"/exceptionMissingEmailAttachments ""false""/emailMessage ""Dear <%=in.personal.fullName%>, \\n\\nPlease inform that your motobike number plate <%=in.motobikeNumberPlate%> has beean APPROVED by  <%=in.approverName%>.\\n\\nRegards,""/emailAttachments * }"' #txt
+As0 f13 type i.mobil.ApprovingPage.ApprovingPageData #txt
+As0 f13 timeout 0 #txt
+As0 f13 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Send approve email</name>
+        <nameStyle>18,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+As0 f13 160 634 128 44 -55 -8 #rect
+As0 f13 @|EMailIcon #fIcon
+As0 f14 expr out #txt
+As0 f14 117 656 160 656 #arcP
+As0 f12 type i.mobil.ApprovingPage.ApprovingPageData #txt
+As0 f12 guid 1582DACC94C4D1FD #txt
+As0 f12 404 643 26 26 0 12 #rect
+As0 f12 @|RichDialogEndIcon #fIcon
+As0 f15 expr out #txt
+As0 f15 288 656 404 656 #arcP
+As0 f16 beanConfig '"{/emailSubject ""Inform Reject Email""/emailFrom ""approve.team@axonactive.com""/emailReplyTo """"/emailTo ""<%=in.personal.email%>""/emailCC """"/emailBCC """"/exceptionMissingEmailAttachments ""false""/emailMessage ""Dear <%=in.personal.fullName%>, \\n\\nPlease inform that your motobike number plate <%=in.motobikeNumberPlate%> has beean REJECTED by  <%=in.approverName%>.\\n\\nRegards,""/emailAttachments * }"' #txt
+As0 f16 type i.mobil.ApprovingPage.ApprovingPageData #txt
+As0 f16 timeout 0 #txt
+As0 f16 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Send reject email</name>
+        <nameStyle>17,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+As0 f16 177 832 112 44 -48 -8 #rect
+As0 f16 @|EMailIcon #fIcon
+As0 f17 type i.mobil.ApprovingPage.ApprovingPageData #txt
+As0 f17 guid 1582DACC94C4D1FD #txt
+As0 f17 413 841 26 26 0 12 #rect
+As0 f17 @|RichDialogEndIcon #fIcon
+As0 f18 guid 15843873DB35BEF8 #txt
+As0 f18 type i.mobil.ApprovingPage.ApprovingPageData #txt
+As0 f18 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
+' #txt
+As0 f18 actionTable 'out=in;
+' #txt
+As0 f18 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>reject</name>
+        <nameStyle>6,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+As0 f18 100 841 26 26 -15 15 #rect
+As0 f18 @|RichDialogProcessStartIcon #fIcon
+As0 f19 expr out #txt
+As0 f19 126 854 177 854 #arcP
+As0 f20 expr out #txt
+As0 f20 289 854 413 854 #arcP
+As0 f21 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
+' #txt
+As0 f21 actionTable 'out=in;
+' #txt
+As0 f21 actionCode '
+
+in.approverName =ivy.session.getSessionUserName();' #txt
+As0 f21 type i.mobil.ApprovingPage.ApprovingPageData #txt
+As0 f21 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Inititlize</name>
+        <nameStyle>10,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+As0 f21 168 42 112 44 -20 -8 #rect
+As0 f21 @|StepIcon #fIcon
+As0 f22 expr out #txt
+As0 f22 109 64 168 64 #arcP
+As0 f2 expr out #txt
+As0 f2 280 64 339 64 #arcP
 >Proto As0 .type i.mobil.ApprovingPage.ApprovingPageData #txt
 >Proto As0 .processKind HTML_DIALOG #txt
+>Proto As0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <swimlaneLabel>Start</swimlaneLabel>
+        <swimlaneLabel>logout_event</swimlaneLabel>
+        <swimlaneLabel>close</swimlaneLabel>
+        <swimlaneLabel>approve_event</swimlaneLabel>
+        <swimlaneLabel>reject_event</swimlaneLabel>
+    </language>
+    <swimlaneOrientation>false</swimlaneOrientation>
+    <swimlaneSize>192</swimlaneSize>
+    <swimlaneSize>192</swimlaneSize>
+    <swimlaneSize>192</swimlaneSize>
+    <swimlaneSize>192</swimlaneSize>
+    <swimlaneSize>192</swimlaneSize>
+    <swimlaneColor gradient="false">-3355444</swimlaneColor>
+    <swimlaneColor gradient="false">-1</swimlaneColor>
+    <swimlaneColor gradient="false">-3342337</swimlaneColor>
+    <swimlaneColor gradient="false">-6697729</swimlaneColor>
+    <swimlaneColor gradient="false">-6710785</swimlaneColor>
+    <swimlaneType>LANE</swimlaneType>
+    <swimlaneType>LANE</swimlaneType>
+    <swimlaneType>LANE</swimlaneType>
+    <swimlaneType>LANE</swimlaneType>
+    <swimlaneType>LANE</swimlaneType>
+    <swimlaneSpaceBefore>0</swimlaneSpaceBefore>
+    <swimlaneSpaceBefore>0</swimlaneSpaceBefore>
+    <swimlaneSpaceBefore>0</swimlaneSpaceBefore>
+    <swimlaneSpaceBefore>0</swimlaneSpaceBefore>
+    <swimlaneSpaceBefore>0</swimlaneSpaceBefore>
+</elementInfo>
+' #txt
 >Proto As0 -8 -8 16 16 16 26 #rect
 >Proto As0 '' #fIcon
-As0 f0 mainOut f2 tail #connect
-As0 f2 head f1 mainIn #connect
 As0 f3 mainOut f5 tail #connect
 As0 f5 head f4 mainIn #connect
 As0 f6 mainOut f10 tail #connect
 As0 f10 head f9 mainIn #connect
 As0 f9 mainOut f8 tail #connect
 As0 f8 head f7 mainIn #connect
+As0 f11 mainOut f14 tail #connect
+As0 f14 head f13 mainIn #connect
+As0 f13 mainOut f15 tail #connect
+As0 f15 head f12 mainIn #connect
+As0 f18 mainOut f19 tail #connect
+As0 f19 head f16 mainIn #connect
+As0 f16 mainOut f20 tail #connect
+As0 f20 head f17 mainIn #connect
+As0 f0 mainOut f22 tail #connect
+As0 f22 head f21 mainIn #connect
+As0 f21 mainOut f2 tail #connect
+As0 f2 head f1 mainIn #connect
