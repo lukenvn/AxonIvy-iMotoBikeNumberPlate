@@ -7,81 +7,109 @@
 	xmlns:ic="http://ivyteam.ch/jsf/component"
 	xmlns:p="http://primefaces.org/ui">
 
-<h:head>
-	<title><ui:insert name="title">Ivy Html Dialog</ui:insert></title>
-	<link rel="shortcut icon"
-		href="#{resource['ivy-webcontent:layouts/images/ivy_favicon_48.png']}" />
-
-	<!-- You can also load bootstrap from an external CDN: https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css -->
-	<h:outputStylesheet
-		name="layouts/styles/bootstrap-modified-for-jsf.css" />
-	<h:outputStylesheet name="layouts/styles/bootstrap-reset.css" />
-	<h:outputStylesheet name="layouts/styles/ivy-common-6.css" />
-
-
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.js"></script>
-  <![endif]-->
-</h:head>
 <h:body>
 	<ui:composition template="/layouts/basic.xhtml">
 		<ui:define name="title">RegistrationPage</ui:define>
+		<ui:define name="css">
+			<h:outputStylesheet name="layouts/styles/style.css" />
+		</ui:define>
 		<ui:define name="content">
-			<h:form id="form">
+			<h:form id="registerForm">
 				<h:panelGrid columns="1">
-					<h:panelGrid columns="2">
-						<f:facet name="header">
-							<p:messages></p:messages>
-						</f:facet>
-						<p:panelGrid columns="2">
-							<p:fieldset
-								legend="#{ivy.cms.co('/Project/personalInformation')}">
-								<p:panelGrid columns="2">
-									<p:outputLabel value="#{ivy.cms.co('/Project/fullName')}" />
-									<p:inputText value="#{data.personal.fullName}" />
-									<p:outputLabel value="#{ivy.cms.co('/Project/id')}" />
-									<p:inputText value="#{data.personal.id}" />
-									<p:outputLabel value="#{ivy.cms.co('/Project/birthDay')}" />
-									<p:calendar value="#{data.personal.birthDay}" />
-									<p:outputLabel value="#{ivy.cms.co('/Project/email')}" />
-									<p:inputText value="#{data.personal.email}" />
-									<p:outputLabel value="#{ivy.cms.co('/Project/address')}" />
-									<p:inputTextarea value="#{data.personal.address}" />
-								</p:panelGrid>
-							</p:fieldset>
-							<p:fieldset
-								legend="#{ivy.cms.co('/Project/motobikeInformation')}">
-								<p:panelGrid columns="2">
-									<p:outputLabel value="#{ivy.cms.co('/Project/type')}" />
-									<p:inputText value="#{data.motobike.type}" />
-									<p:outputLabel value="#{ivy.cms.co('/Project/chassisNumber')}" />
-									<p:inputText value="#{data.motobike.chassicNumber}" />
-									<p:outputLabel
-										value="#{ivy.cms.co('/Project/chassisFrameNumber')}" />
-									<p:inputText value="#{data.motobike.chassicFrameNumber}" />
-									<p:outputLabel value="#{ivy.cms.co('/Project/description')}" />
-									<p:inputTextarea value="#{data.motobike.description}" />
-								</p:panelGrid>
-
-							</p:fieldset>
-						</p:panelGrid>
+					<h:panelGrid columns="2" styleClass="infoComponent">
+						<p:fieldset styleClass="child-info-component"
+							legend="#{ivy.cms.co('/Project/personalInformation')}">
+							<h:panelGrid columns="2">
+								<p:outputLabel value="#{ivy.cms.co('/Project/fullName')}" />
+								<p:inputText id="fullName" value="#{data.personal.fullName}"
+									required="true" disabled="#{data.motobikeNumberPlate !=null}">
+									<f:validateLength maximum="100" />
+								</p:inputText>
+								<br />
+								<p:message for="fullName" display="text" />
+								<p:outputLabel value="#{ivy.cms.co('/Project/id')}" />
+								<p:inputText id="id" value="#{data.personal.id}" required="true"
+									disabled="#{data.motobikeNumberPlate !=null}"
+									onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;">
+									<f:validateLength maximum="12" />
+								</p:inputText>
+								<br />
+								<p:message for="id" display="text" />
+								<p:outputLabel value="#{ivy.cms.co('/Project/birthDay')}" />
+								<p:calendar id="birthday" value="#{data.personal.birthDay}"
+									required="true" disabled="#{data.motobikeNumberPlate !=null}"
+									navigator="true" yearRange="1900:2016">
+									<f:validator validatorId="ageValidator" />
+								</p:calendar>
+								<br />
+								<p:message for="birthday" display="text" />
+								<p:outputLabel value="#{ivy.cms.co('/Project/email')}" />
+								<p:inputText id="email" value="#{data.personal.email}"
+									required="true" disabled="#{data.motobikeNumberPlate !=null}"
+									validatorMessage="Not a valid email format">
+									<f:validateRegex
+										pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+								</p:inputText>
+								<br />
+								<p:message for="email" display="text" />
+								<p:outputLabel value="#{ivy.cms.co('/Project/address')}" />
+								<p:inputTextarea id="address" value="#{data.personal.address}"
+									required="true" disabled="#{data.motobikeNumberPlate !=null}">
+									<f:validateLength maximum="255" />
+								</p:inputTextarea>
+								<br />
+								<p:message for="address" display="text" />
+							</h:panelGrid>
+						</p:fieldset>
+						<p:fieldset styleClass="child-info-component"
+							legend="#{ivy.cms.co('/Project/motobikeInformation')}">
+							<h:panelGrid columns="2">
+								<p:outputLabel value="#{ivy.cms.co('/Project/type')}" />
+								<!-- <p:inputText id="type" value="#{data.motobike.type}" required="true" disabled="#{data.motobikeNumberPlate !=null}"/> -->
+								<p:selectOneMenu id="type" value="#{data.motobike.type}"
+									required="true" disabled="#{data.motobikeNumberPlate !=null}">
+									<f:selectItem itemLabel="Please choose" itemValue=""
+										noSelectionOption="true" />
+									<f:selectItems value="#{data.motobike.types}" />
+								</p:selectOneMenu>
+								<br />
+								<p:message for="type" display="text" />
+								<p:outputLabel value="#{ivy.cms.co('/Project/chassisNumber')}" />
+								<p:inputText id="chasNum" value="#{data.motobike.chassicNumber}"
+									required="true" disabled="#{data.motobikeNumberPlate !=null}">
+									<f:validateLength maximum="17" />
+								</p:inputText>
+								<br />
+								<p:message for="chasNum" display="text" />
+								<p:outputLabel
+									value="#{ivy.cms.co('/Project/chassisFrameNumber')}" />
+								<p:inputText id="chasFramNum"
+									value="#{data.motobike.chassicFrameNumber}" required="true"
+									disabled="#{data.motobikeNumberPlate !=null}">
+									<f:validateLength maximum="17" />
+								</p:inputText>
+								<br />
+								<p:message for="chasFramNum" display="text" />
+								<p:outputLabel value="#{ivy.cms.co('/Project/description')}" />
+								<p:inputTextarea id="desc" value="#{data.motobike.description}"
+									required="true" disabled="#{data.motobikeNumberPlate !=null}">
+									<f:validateLength maximum="100" />
+								</p:inputTextarea>
+								<br />
+								<p:message for="desc" display="text" />
+							</h:panelGrid>
+						</p:fieldset>
 					</h:panelGrid>
-
-					<h:panelGrid columns="2">
-						<p:panelGrid columns="2">
-							<p:fieldset id="requestNumberPlateFiled" legend="#{ivy.cms.co('/Project/requestNumberPlate')}">
-								<p:panelGrid columns="1">
-									<h:outputText id="motobikeNumberPlateText"
-										value="#{data.motobikeNumberPlate}" />
-								</p:panelGrid>
-								<ui:insert name="rolesAction">
-
-								</ui:insert>
-
-							</p:fieldset>
-						</p:panelGrid>
+					<h:panelGrid columns="2" styleClass="infoComponent">
+						<p:fieldset id="numberComponent"
+							styleClass="numberComponentFieldSet"
+							legend="#{ivy.cms.co('/Project/requestNumberPlate')}">
+							<h:panelGrid columns="1" styleClass="motobikeNumberPlate">
+								<h:outputText styleClass="motobikeNumberPlateText"
+									value="#{data.motobikeNumberPlate}" />
+								<ui:insert name="rolesAction" />
+							</h:panelGrid>
+						</p:fieldset>
 					</h:panelGrid>
 				</h:panelGrid>
 			</h:form>
