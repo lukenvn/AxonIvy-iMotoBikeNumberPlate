@@ -6,3 +6,5 @@ motobike i.mobil.model.Motobike #field
 motobike PERSISTENT #fieldModifier
 motobikeNumberPlate String #field
 motobikeNumberPlate PERSISTENT #fieldModifier
+approverName String #field
+approverName PERSISTENT #fieldModifier

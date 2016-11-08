@@ -16,7 +16,6 @@
 			<h:panelGroup styleClass="navbar-right sessionComponent">
 				<h:outputText value="#{ivy.cms.co('/Project/welcome')}"/>
 				<p:outputLabel value="#{ivy.session.sessionUserName}" style="color: blue; margin-left: 10px; margin-right: 10px;"/>
-
 				<p:commandLink value="#{ivy.cms.co('/Project/logout')}" actionListener="#{logic.logout}"  />
 			</h:panelGroup>
 		</ui:define>
@@ -44,7 +43,7 @@
 				message="#{ivy.cms.co('/Project/confirmMessage')}" global="true" showEffect="fade"
 				hideEffect="fade">
 				<p:commandButton value="Yes" styleClass="ui-confirmdialog-yes btn-success"
-					icon="ui-icon-check" actionListener="#{logic.submit}" />
+					icon="ui-icon-check" actionListener="#{logic.reject}" />
 				<p:commandButton value="No" styleClass="ui-confirmdialog-no"
 					icon="ui-icon-close" />
 			</p:confirmDialog>
@@ -52,7 +51,7 @@
 				message="#{ivy.cms.co('/Project/confirmMessage')}" global="true" showEffect="fade"
 				hideEffect="fade">
 				<p:commandButton value="Yes" styleClass="ui-confirmdialog-yes btn btn-success"
-					icon="ui-icon-check" actionListener="#{logic.submit}" />
+					icon="ui-icon-check" actionListener="#{logic.approve}" />
 				<p:commandButton value="No" styleClass="ui-confirmdialog-no"
 					icon="ui-icon-close" />
 			</p:confirmDialog>
