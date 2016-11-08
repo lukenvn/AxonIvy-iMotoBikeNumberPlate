@@ -10,9 +10,6 @@
 <h:body>
 	<ui:composition template="/layouts/basic.xhtml">
 		<ui:define name="title">RegistrationPage</ui:define>
-		<ui:define name="css">
-			<h:outputStylesheet name="layouts/styles/style.css" />
-		</ui:define>
 		<ui:define name="content">
 			<h:form id="registerForm">
 				<h:panelGrid columns="1">
@@ -101,15 +98,7 @@
 						</p:fieldset>
 					</h:panelGrid>
 					<h:panelGrid columns="2" styleClass="infoComponent">
-						<p:fieldset id="numberComponent"
-							styleClass="numberComponentFieldSet"
-							legend="#{ivy.cms.co('/Project/requestNumberPlate')}">
-							<h:panelGrid columns="1" styleClass="motobikeNumberPlate">
-								<h:outputText styleClass="motobikeNumberPlateText"
-									value="#{data.motobikeNumberPlate}" />
-								<ui:insert name="rolesAction" />
-							</h:panelGrid>
-						</p:fieldset>
+						<ui:insert name="numberPlateInfo"/>
 					</h:panelGrid>
 				</h:panelGrid>
 			</h:form>

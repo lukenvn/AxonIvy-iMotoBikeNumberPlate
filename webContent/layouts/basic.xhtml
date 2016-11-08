@@ -17,7 +17,7 @@
 		name="layouts/styles/bootstrap-modified-for-jsf.css" />
 	<h:outputStylesheet name="layouts/styles/bootstrap-reset.css" />
 	<h:outputStylesheet name="layouts/styles/ivy-common-6.css" />
-
+	<h:outputStylesheet name="layouts/styles/base-style.css" />
 	<ui:insert name="css"></ui:insert>
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -30,17 +30,14 @@
 		<div class="navbar navbar-top">
 			<div class="container" id="headerdiv">
 				<div class="navbar-header">
-					<a class="ivy-logo" href="http://localhost:8081/ivy/info/index.jsp"> <h:graphicImage
-							name="layouts/images/logo_aavn.png" alt="Axon.ivy" />
+					<a class="ivy-logo" href="http://localhost:8081/ivy/info/index.jsp">
+						<h:graphicImage name="layouts/images/logo_aavn.png" alt="Axon.ivy" />
 					</a>
 				</div>
-        
-        <ui:insert name="userSessionContainer">
-
-  		</ui:insert>
-      </div>
-    </div>
-  </ui:insert>
+				<ui:insert name="userSessionContainer" />
+			</div>
+		</div>
+	</ui:insert>
 
 	<div id="content" class="container">
 		<ui:insert name="content">
