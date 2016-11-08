@@ -37,7 +37,8 @@
 								<p:message for="id" display="text" />
 								<p:outputLabel value="#{ivy.cms.co('/Project/birthDay')}" />
 								<p:calendar id="birthday" value="#{data.personal.birthDay}"
-									required="true" disabled="#{data.motobikeNumberPlate !=null}">
+									required="true" disabled="#{data.motobikeNumberPlate !=null}"
+									navigator="true" yearRange="1900:2016">
 									<f:validator validatorId="ageValidator" />
 								</p:calendar>
 								<br />
@@ -100,12 +101,13 @@
 						</p:fieldset>
 					</h:panelGrid>
 					<h:panelGrid columns="2" styleClass="infoComponent">
-						<p:fieldset id="numberComponent" styleClass="numberComponentFieldSet"
+						<p:fieldset id="numberComponent"
+							styleClass="numberComponentFieldSet"
 							legend="#{ivy.cms.co('/Project/requestNumberPlate')}">
 							<h:panelGrid columns="1" styleClass="motobikeNumberPlate">
 								<h:outputText styleClass="motobikeNumberPlateText"
 									value="#{data.motobikeNumberPlate}" />
-								<ui:insert name="rolesAction"/>
+								<ui:insert name="rolesAction" />
 							</h:panelGrid>
 						</p:fieldset>
 					</h:panelGrid>
