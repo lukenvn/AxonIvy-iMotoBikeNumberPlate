@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Nov 04 14:28:21 ICT 2016]
+[>Created: Tue Nov 08 13:44:56 ICT 2016]
 158297BD29ACB0F7 3.18 #module
 >Proto >Proto Collection #zClass
 Rs0 RegistrationPageProcess Big #zClass
@@ -19,7 +19,6 @@ Rs0 @RichDialogInitStart f0 '' #zField
 Rs0 @RichDialogProcessEnd f1 '' #zField
 Rs0 @RichDialogProcessStart f3 '' #zField
 Rs0 @RichDialogEnd f4 '' #zField
-Rs0 @PushWFArc f5 '' #zField
 Rs0 @GridStep f6 '' #zField
 Rs0 @PushWFArc f7 '' #zField
 Rs0 @PushWFArc f2 '' #zField
@@ -28,6 +27,7 @@ Rs0 @RichDialogProcessEnd f9 '' #zField
 Rs0 @GridStep f11 '' #zField
 Rs0 @PushWFArc f12 '' #zField
 Rs0 @PushWFArc f10 '' #zField
+Rs0 @PushWFArc f5 '' #zField
 >Proto Rs0 Rs0 RegistrationPageProcess #zField
 Rs0 f0 guid 158297BD2B94BDF2 #txt
 Rs0 f0 type i.mobil.RegistrationPage.RegistrationPageData #txt
@@ -75,10 +75,8 @@ Rs0 f3 83 443 26 26 -19 15 #rect
 Rs0 f3 @|RichDialogProcessStartIcon #fIcon
 Rs0 f4 type i.mobil.RegistrationPage.RegistrationPageData #txt
 Rs0 f4 guid 158297BD2C69D252 #txt
-Rs0 f4 251 443 26 26 0 12 #rect
+Rs0 f4 443 443 26 26 0 12 #rect
 Rs0 f4 @|RichDialogEndIcon #fIcon
-Rs0 f5 expr out #txt
-Rs0 f5 109 456 251 456 #arcP
 Rs0 f6 actionDecl 'i.mobil.RegistrationPage.RegistrationPageData out;
 ' #txt
 Rs0 f6 actionTable 'out=in;
@@ -86,7 +84,8 @@ Rs0 f6 actionTable 'out=in;
 Rs0 f6 actionCode 'import i.mobil.model.Personal;
 import i.mobil.model.Motobike;
 in.motobike = new Motobike();
-in.personal = new Personal();' #txt
+in.personal = new Personal();
+ivy.log.debug("initialized");' #txt
 Rs0 f6 type i.mobil.RegistrationPage.RegistrationPageData #txt
 Rs0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -151,6 +150,8 @@ Rs0 f12 expr out #txt
 Rs0 f12 109 288 288 288 #arcP
 Rs0 f10 expr out #txt
 Rs0 f10 400 288 555 288 #arcP
+Rs0 f5 expr out #txt
+Rs0 f5 109 456 443 456 #arcP
 >Proto Rs0 .type i.mobil.RegistrationPage.RegistrationPageData #txt
 >Proto Rs0 .processKind HTML_DIALOG #txt
 >Proto Rs0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>

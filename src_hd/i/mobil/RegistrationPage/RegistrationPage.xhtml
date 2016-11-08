@@ -9,25 +9,40 @@
 <h:body>
 	<ui:composition template="/layouts/registerInformation.xhtml">
 		<ui:define name="title">RegistrationPage</ui:define>
-		<ui:define name="rolesAction">
-			<!-- <p:messages></p:messages> -->
-			<p:panelGrid columns="2">
-				<p:commandButton id="generateButton" value="Generate"
-					actionListener="#{logic.generateMotobikeNumberPlate}"
-					update="requestNumberPlateFiled registerForm" 
-					disabled="#{data.motobikeNumberPlate !=null}" validateClient="true"/>
-				<p:commandButton id="submitButton" value="Submit"
-					onclick="PF('submitDialog').show();"
-					rendered="#{data.motobikeNumberPlate !=null}">
-				</p:commandButton>
-			</p:panelGrid>
-			<p:confirmDialog id="submitDialog" widgetVar="submitDialog" message="Are you sure?"
-				global="true" showEffect="fade" hideEffect="fade">
-				<p:commandButton value="Yes" 
-					styleClass="ui-confirmdialog-yes" icon="ui-icon-check"
-					actionListener="#{logic.submit}" />
-				<p:commandButton value="No"
-					styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+		<ui:define name="css">
+			<h:outputStylesheet name="css/registration-style.css" />
+		</ui:define>
+		<ui:define name="numberPlateInfo">
+			<p:fieldset id="numberComponent" styleClass="numberComponentFieldSet"
+				legend="#{ivy.cms.co('/Project/requestNumberPlate')}">
+				<h:panelGrid columns="1" styleClass="motobikeNumberComponent">
+					<p:panelGrid columns="1" styleClass="motobikeNumberPlate">
+						<h:outputText styleClass="motobikeNumberPlateText"
+							value="#{data.motobikeNumberPlate}" />
+					</p:panelGrid>
+					<h:panelGrid columns="1" styleClass="rolesAction">
+						<h:panelGrid columns="2">
+							<p:commandButton id="generateButton" value="#{ivy.cms.co('/Project/generate')}" styleClass="btn btn-primary"
+								actionListener="#{logic.generateMotobikeNumberPlate}"
+								update="numberComponent registerForm"
+								disabled="#{data.motobikeNumberPlate !=null}"
+								validateClient="true" />
+							<p:commandButton id="submitButton" value="#{ivy.cms.co('/Project/submit')}" styleClass="btn btn-success"
+								onclick="PF('submitDialog').show();"
+								rendered="#{data.motobikeNumberPlate !=null}">
+							</p:commandButton>
+						</h:panelGrid>
+					</h:panelGrid>
+				</h:panelGrid>
+			</p:fieldset>
+
+			<p:confirmDialog id="submitDialog" widgetVar="submitDialog" header="#{ivy.cms.co('/Project/submitConfirmation')}" message="#{ivy.cms.co('/Project/confirmMessage')}"
+				 global="true" showEffect="fade"
+				hideEffect="fade">
+				<p:commandButton value="Yes" styleClass="btn btn-success"
+					icon="ui-icon-check" actionListener="#{logic.submit}" />
+				<p:commandButton value="No" styleClass="btn"
+					icon="ui-icon-close" />
 			</p:confirmDialog>
 		</ui:define>
 

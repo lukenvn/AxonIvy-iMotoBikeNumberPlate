@@ -1,0 +1,29 @@
+.child-info-component {
+	height: 550px;
+}
+
+.infoComponent {
+	width: 700px
+}
+.numberComponentFieldSet {
+	width: 96.5%
+}
+
+.motobikeNumberComponent {
+	margin-left: 200px;
+	height: 90px;
+	width: 250px
+}
+
+.motobikeNumberPlate {
+	height: 90px;
+	width: 270px
+}
+
+.motobikeNumberPlateText {
+	padding-left: 20px;
+	font-size: xx-large;
+}
+.rolesAction{
+	margin-left: 40px;
+}
