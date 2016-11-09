@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Wed Nov 09 08:54:24 ICT 2016]
+[>Created: Wed Nov 09 10:03:01 ICT 2016]
 1582DACC91FB4C22 3.18 #module
 >Proto >Proto Collection #zClass
 As0 ApprovingPageProcess Big #zClass
@@ -125,9 +125,9 @@ As0 f11 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
 As0 f11 actionTable 'out=in;
 ' #txt
 As0 f11 actionCode 'in.motobike.types = new java.util.HashMap();
-in.motobike.types.put("Yamaha Exciter 2016","Yamaha Exciter 2016");
-in.motobike.types.put("Honda Airblade 2015","Honda Airblade 2015");
-in.motobike.types.put("Honda Future 2013","Honda Future 2013");' #txt
+in.motobike.types.put("Exciter 2016","Exciter 2016");
+in.motobike.types.put("Airblade 2015","Airblade 2015");
+in.motobike.types.put("Future 2013","Future 2013");' #txt
 As0 f11 type i.mobil.ApprovingPage.ApprovingPageData #txt
 As0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>

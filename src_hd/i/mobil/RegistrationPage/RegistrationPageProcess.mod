@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Wed Nov 09 08:56:21 ICT 2016]
+[>Created: Wed Nov 09 10:02:31 ICT 2016]
 158297BD29ACB0F7 3.18 #module
 >Proto >Proto Collection #zClass
 Rs0 RegistrationPageProcess Big #zClass
@@ -91,9 +91,9 @@ in.motobike = new Motobike();
 in.personal = new Personal();
 
 out.motobike.types = new java.util.HashMap();
-out.motobike.types.put("Yamaha Exciter 2016","Yamaha Exciter 2016");
-out.motobike.types.put("Honda Airblade 2015","Honda Airblade 2015");
-out.motobike.types.put("Honda Future 2013","Honda Future 2013");' #txt
+out.motobike.types.put("Exciter 2016","Exciter 2016");
+out.motobike.types.put("Airblade 2015","Airblade 2015");
+out.motobike.types.put("Future 2013","Future 2013");' #txt
 Rs0 f6 type i.mobil.RegistrationPage.RegistrationPageData #txt
 Rs0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>

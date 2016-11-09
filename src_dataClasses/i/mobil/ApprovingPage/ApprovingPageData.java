@@ -7,7 +7,7 @@ package i.mobil.ApprovingPage;
 public class ApprovingPageData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -2872130037915569263L;
+  private static final long serialVersionUID = -3045504662965068031L;
 
   private i.mobil.Personal personal;
 
