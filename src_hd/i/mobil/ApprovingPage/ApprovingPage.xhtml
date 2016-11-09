@@ -51,9 +51,10 @@
 				global="true" showEffect="fade" hideEffect="fade">
 				<p:commandButton value="Yes"
 					styleClass="ui-confirmdialog-yes btn-success" icon="ui-icon-check"
-					actionListener="#{logic.reject}" onstart="PF('rejectDialog').hide()" />
-				<p:commandButton value="No" styleClass="ui-confirmdialog-no"
-					actionListener="#{logic.close}" icon="ui-icon-close" />
+					actionListener="#{logic.reject}"
+					onstart="PF('rejectDialog').hide()" />
+				<p:commandButton value="No" styleClass="ui-confirmdialog-no" onclick="PF('rejectDialog').hide()"
+					icon="ui-icon-close" />
 			</p:confirmDialog>
 			<p:confirmDialog id="approveDialog" widgetVar="approveDialog"
 				header="#{ivy.cms.co('/Project/approveConfirmation')}"
@@ -62,19 +63,18 @@
 				<p:commandButton value="Yes"
 					styleClass="ui-confirmdialog-yes btn btn-success"
 					icon="ui-icon-check" actionListener="#{logic.approve}"
-					onstart="PF('approveDialog').hide()" />
+					onstart="PF('approveDialog').hide()"/>
 				<p:commandButton value="No" styleClass="ui-confirmdialog-no"
-					actionListener="#{logic.close}" icon="ui-icon-close" />
+					icon="ui-icon-close" />
 			</p:confirmDialog>
-
-			<p:dialog widgetVar="successEmailDialog" header="#{ivy.cms.co('/Project/successSendingEmailMessage')}">
-				<p:commandButton value="OK" 
-					styleClass="btn-success okButton" 
+			<p:dialog widgetVar="successEmailDialog"
+				header="#{ivy.cms.co('/Project/successSendingEmailMessage')}">
+				<p:commandButton value="OK" styleClass="btn-success okButton"
 					actionListener="#{logic.close}" />
 			</p:dialog>
-			<p:dialog widgetVar="faildedEmailDialog" header="#{ivy.cms.co('/Project/failedSenddingEmailMessage')}">
-				<p:commandButton value="OK"
-					styleClass="btn-success okButton" 
+			<p:dialog widgetVar="faildedEmailDialog"
+				header="#{ivy.cms.co('/Project/failedSenddingEmailMessage')}">
+				<p:commandButton value="OK" styleClass="btn-success okButton"
 					actionListener="#{logic.close}" />
 			</p:dialog>
 

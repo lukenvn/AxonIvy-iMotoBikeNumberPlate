@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Wed Nov 09 14:00:09 ICT 2016]
+[>Created: Wed Nov 09 15:39:51 ICT 2016]
 1582DACC91FB4C22 3.18 #module
 >Proto >Proto Collection #zClass
 As0 ApprovingPageProcess Big #zClass
@@ -305,7 +305,7 @@ As0 f30 expr in #txt
 As0 f30 outCond !in.personal.getEmail().isEmpty() #txt
 As0 f30 219 920 320 920 #arcP
 As0 f30 0 0.36438136538630883 0 0 #arcLabel
-As0 f16 beanConfig '"{/emailSubject ""Inform Reject Email""/emailFrom ""approve.team@axonactive.com""/emailReplyTo """"/emailTo ""<%=in.personal.email%>""/emailCC """"/emailBCC """"/exceptionMissingEmailAttachments ""false""/emailMessage ""Dear <%=in.personal.fullName%>, \\n\\nPlease inform that your motobike number plate <%=in.motobikeNumberPlate%> has beean REJECTED by  <%=in.approverName%>.\\n\\nRegards,""/emailAttachments * }"' #txt
+As0 f16 beanConfig '"{/emailSubject ""Inform Reject Email""/emailFrom ""vision@axonivy.io""/emailReplyTo """"/emailTo ""<%=in.personal.email%>""/emailCC """"/emailBCC """"/exceptionMissingEmailAttachments ""false""/emailMessage ""Dear <%=in.personal.fullName%>, \\n\\nPlease inform that your motobike number plate <%=in.motobikeNumberPlate%> has beean REJECTED by  <%=in.approverName%>.\\n\\nRegards,""/emailAttachments * }"' #txt
 As0 f16 type i.mobil.ApprovingPage.ApprovingPageData #txt
 As0 f16 timeout 0 #txt
 As0 f16 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
