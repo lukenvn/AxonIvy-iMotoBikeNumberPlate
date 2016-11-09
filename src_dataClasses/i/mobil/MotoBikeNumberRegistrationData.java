@@ -69,4 +69,24 @@ public class MotoBikeNumberRegistrationData extends ch.ivyteam.ivy.scripting.obj
     motobikeNumberPlate = _motobikeNumberPlate;
   }
 
+  private java.lang.String approverName;
+
+  /**
+   * Gets the field approverName.
+   * @return the value of the field approverName; may be null.
+   */
+  public java.lang.String getApproverName()
+  {
+    return approverName;
+  }
+
+  /**
+   * Sets the field approverName.
+   * @param _approverName the new value of the field approverName.
+   */
+  public void setApproverName(java.lang.String _approverName)
+  {
+    approverName = _approverName;
+  }
+
 }
