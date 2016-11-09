@@ -40,21 +40,24 @@
 			</p:fieldset>
 
 			<p:confirmDialog id="rejectDialog" widgetVar="rejectDialog" header="#{ivy.cms.co('/Project/rejectConfirmation')}"
-				message="#{ivy.cms.co('/Project/confirmMessage')}" global="true" showEffect="fade"
+				message="#{ivy.cms.co('/Project/rejectConfirmMessage')}" global="true" showEffect="fade"
 				hideEffect="fade">
 				<p:commandButton value="Yes" styleClass="ui-confirmdialog-yes btn-success"
 					icon="ui-icon-check" actionListener="#{logic.reject}" />
-				<p:commandButton value="No" styleClass="ui-confirmdialog-no"
+				<p:commandButton value="No" styleClass="ui-confirmdialog-no"  actionListener="#{logic.close}"
 					icon="ui-icon-close" />
 			</p:confirmDialog>
 			<p:confirmDialog id="approveDialog" widgetVar="approveDialog" header="#{ivy.cms.co('/Project/approveConfirmation')}"
-				message="#{ivy.cms.co('/Project/confirmMessage')}" global="true" showEffect="fade"
+				message="#{ivy.cms.co('/Project/approveConfirmMessage')}" global="true" showEffect="fade"
 				hideEffect="fade">
 				<p:commandButton value="Yes" styleClass="ui-confirmdialog-yes btn btn-success"
-					icon="ui-icon-check" actionListener="#{logic.approve}" />
-				<p:commandButton value="No" styleClass="ui-confirmdialog-no"
+					icon="ui-icon-check" actionListener="#{logic.approve}" onstart="PF('approveDialog').hide()"/>
+				<p:commandButton value="No" styleClass="ui-confirmdialog-no" actionListener="#{logic.close}"
 					icon="ui-icon-close" />
 			</p:confirmDialog>
+			
+			<p:dialog widgetVar="successEmailDialog"  />
+			
 		</ui:define>
 		
 		
