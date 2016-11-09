@@ -13,9 +13,9 @@ public class Motobike {
 	
 	public Motobike() {
 		types = new HashMap<String, String>();
-		types.put("Yamaha Exciter 2016", "Yamaha Exciter 2016");
-		types.put("Honda Airblade 2015", "Honda Airblade 2015");
-		types.put("Honda Future 2013", "Honda Future 2013");
+		types.put("Exciter 2016", "Exciter 2016");
+		types.put("Airblade 2015", "Airblade 2015");
+		types.put("Future 2013", "Future 2013");
 	}
 	
 	public String getType() {
