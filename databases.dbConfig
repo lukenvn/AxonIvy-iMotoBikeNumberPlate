@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<databaseconfigs/>
+<databaseconfigs>
+    <databaseconfig name="iMotorbikeNumberPlate" url="jdbc:mysql://localhost/iMotorbikeNumberPlate" driver="com.mysql.jdbc.Driver" user="root"/>
+</databaseconfigs>

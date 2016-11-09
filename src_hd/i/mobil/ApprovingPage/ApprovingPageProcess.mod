@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Nov 07 15:50:43 ICT 2016]
+[>Created: Wed Nov 09 08:54:24 ICT 2016]
 1582DACC91FB4C22 3.18 #module
 >Proto >Proto Collection #zClass
 As0 ApprovingPageProcess Big #zClass
@@ -17,7 +17,6 @@ As0 @TextInP .xml .xml #zField
 As0 @TextInP .responsibility .responsibility #zField
 As0 @RichDialogInitStart f0 '' #zField
 As0 @RichDialogProcessEnd f1 '' #zField
-As0 @PushWFArc f2 '' #zField
 As0 @RichDialogProcessStart f3 '' #zField
 As0 @RichDialogEnd f4 '' #zField
 As0 @PushWFArc f5 '' #zField
@@ -26,13 +25,16 @@ As0 @RichDialogProcessEnd f7 '' #zField
 As0 @GridStep f9 '' #zField
 As0 @PushWFArc f10 '' #zField
 As0 @PushWFArc f8 '' #zField
+As0 @GridStep f11 '' #zField
+As0 @PushWFArc f2 '' #zField
+As0 @PushWFArc f12 '' #zField
 >Proto As0 As0 ApprovingPageProcess #zField
 As0 f0 guid 1582DACC93B92C5F #txt
 As0 f0 type i.mobil.ApprovingPage.ApprovingPageData #txt
-As0 f0 method start(i.mobil.model.Personal,i.mobil.model.Motobike,String) #txt
+As0 f0 method start(i.mobil.Personal,i.mobil.Motobike,String) #txt
 As0 f0 disableUIEvents true #txt
 As0 f0 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<i.mobil.model.Personal personal,i.mobil.model.Motobike motobike,java.lang.String motobikeNumberPlate> param = methodEvent.getInputArguments();
+<i.mobil.Personal personal,i.mobil.Motobike motobike,java.lang.String motobikeNumberPlate> param = methodEvent.getInputArguments();
 ' #txt
 As0 f0 inParameterMapAction 'out.motobike=param.motobike;
 out.motobikeNumberPlate=param.motobikeNumberPlate;
@@ -52,10 +54,8 @@ As0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 As0 f0 83 51 26 26 -16 15 #rect
 As0 f0 @|RichDialogInitStartIcon #fIcon
 As0 f1 type i.mobil.ApprovingPage.ApprovingPageData #txt
-As0 f1 211 51 26 26 0 12 #rect
+As0 f1 435 51 26 26 0 12 #rect
 As0 f1 @|RichDialogProcessEndIcon #fIcon
-As0 f2 expr out #txt
-As0 f2 109 64 211 64 #arcP
 As0 f3 guid 1582DACC94BBF4C0 #txt
 As0 f3 type i.mobil.ApprovingPage.ApprovingPageData #txt
 As0 f3 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
@@ -120,15 +120,41 @@ As0 f10 expr out #txt
 As0 f10 109 272 168 272 #arcP
 As0 f8 expr out #txt
 As0 f8 280 272 395 272 #arcP
+As0 f11 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
+' #txt
+As0 f11 actionTable 'out=in;
+' #txt
+As0 f11 actionCode 'in.motobike.types = new java.util.HashMap();
+in.motobike.types.put("Yamaha Exciter 2016","Yamaha Exciter 2016");
+in.motobike.types.put("Honda Airblade 2015","Honda Airblade 2015");
+in.motobike.types.put("Honda Future 2013","Honda Future 2013");' #txt
+As0 f11 type i.mobil.ApprovingPage.ApprovingPageData #txt
+As0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>initialize motorbike types</name>
+        <nameStyle>26,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+As0 f11 208 42 144 44 -67 -8 #rect
+As0 f11 @|StepIcon #fIcon
+As0 f2 expr out #txt
+As0 f2 109 64 208 64 #arcP
+As0 f12 expr out #txt
+As0 f12 352 64 435 64 #arcP
 >Proto As0 .type i.mobil.ApprovingPage.ApprovingPageData #txt
 >Proto As0 .processKind HTML_DIALOG #txt
 >Proto As0 -8 -8 16 16 16 26 #rect
 >Proto As0 '' #fIcon
-As0 f0 mainOut f2 tail #connect
-As0 f2 head f1 mainIn #connect
 As0 f3 mainOut f5 tail #connect
 As0 f5 head f4 mainIn #connect
 As0 f6 mainOut f10 tail #connect
 As0 f10 head f9 mainIn #connect
 As0 f9 mainOut f8 tail #connect
 As0 f8 head f7 mainIn #connect
+As0 f0 mainOut f2 tail #connect
+As0 f2 head f11 mainIn #connect
+As0 f11 mainOut f12 tail #connect
+As0 f12 head f1 mainIn #connect

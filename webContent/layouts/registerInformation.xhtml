@@ -42,10 +42,10 @@
 								<p:message for="birthday" display="text" />
 								<p:outputLabel value="#{ivy.cms.co('/Project/email')}" />
 								<p:inputText id="email" value="#{data.personal.email}"
-									required="true" disabled="#{data.motobikeNumberPlate !=null}"
+									disabled="#{data.motobikeNumberPlate !=null}"
 									validatorMessage="Not a valid email format">
 									<f:validateRegex
-										pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+										pattern="(^$|^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$)" />
 								</p:inputText>
 								<br />
 								<p:message for="email" display="text" />
@@ -89,7 +89,7 @@
 								<p:message for="chasFramNum" display="text" />
 								<p:outputLabel value="#{ivy.cms.co('/Project/description')}" />
 								<p:inputTextarea id="desc" value="#{data.motobike.description}"
-									required="true" disabled="#{data.motobikeNumberPlate !=null}">
+									disabled="#{data.motobikeNumberPlate !=null}">
 									<f:validateLength maximum="100" />
 								</p:inputTextarea>
 								<br />

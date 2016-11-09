@@ -1,0 +1,22 @@
+Motobike #class
+true #isEntity
+i.mobil #namespace
+motobike #dbTableName
+motobikeId Integer #field
+motobikeId Identifier #fieldComment
+motobikeId motobike_id #dbFieldName
+motobikeId PERSISTENT #fieldModifier
+motobikeId ID #fieldModifier
+motobikeId GENERATED #fieldModifier
+type String #field
+type motobike_type #dbFieldName
+type PERSISTENT #fieldModifier
+chassicNumber String #field
+chassicNumber chassic_number #dbFieldName
+chassicNumber PERSISTENT #fieldModifier
+chassicFrameNumber String #field
+chassicFrameNumber chassic_frame_number #dbFieldName
+chassicFrameNumber PERSISTENT #fieldModifier
+description String #field
+description PERSISTENT #fieldModifier
+types java.util.HashMap #field

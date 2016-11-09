@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Nov 08 15:53:20 ICT 2016]
+[>Created: Wed Nov 09 08:56:21 ICT 2016]
 158297BD29ACB0F7 3.18 #module
 >Proto >Proto Collection #zClass
 Rs0 RegistrationPageProcess Big #zClass
@@ -28,8 +28,10 @@ Rs0 @GridStep f11 '' #zField
 Rs0 @PushWFArc f12 '' #zField
 Rs0 @PushWFArc f10 '' #zField
 Rs0 @GridStep f13 '' #zField
-Rs0 @PushWFArc f14 '' #zField
 Rs0 @PushWFArc f5 '' #zField
+Rs0 @GridStep f14 '' #zField
+Rs0 @PushWFArc f15 '' #zField
+Rs0 @PushWFArc f16 '' #zField
 >Proto Rs0 Rs0 RegistrationPageProcess #zField
 Rs0 f0 guid 158297BD2B94BDF2 #txt
 Rs0 f0 type i.mobil.RegistrationPage.RegistrationPageData #txt
@@ -38,7 +40,7 @@ Rs0 f0 disableUIEvents true #txt
 Rs0 f0 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
 <> param = methodEvent.getInputArguments();
 ' #txt
-Rs0 f0 outParameterDecl '<i.mobil.model.Personal personal,i.mobil.model.Motobike motobike,java.lang.String motobikeNumberPlate> result;
+Rs0 f0 outParameterDecl '<i.mobil.Personal personal,i.mobil.Motobike motobike,java.lang.String motobikeNumberPlate> result;
 ' #txt
 Rs0 f0 outParameterMapAction 'result.personal=in.personal;
 result.motobike=in.motobike;
@@ -77,16 +79,21 @@ Rs0 f3 83 443 26 26 -19 15 #rect
 Rs0 f3 @|RichDialogProcessStartIcon #fIcon
 Rs0 f4 type i.mobil.RegistrationPage.RegistrationPageData #txt
 Rs0 f4 guid 158297BD2C69D252 #txt
-Rs0 f4 403 443 26 26 0 12 #rect
+Rs0 f4 595 443 26 26 0 12 #rect
 Rs0 f4 @|RichDialogEndIcon #fIcon
 Rs0 f6 actionDecl 'i.mobil.RegistrationPage.RegistrationPageData out;
 ' #txt
 Rs0 f6 actionTable 'out=in;
 ' #txt
-Rs0 f6 actionCode 'import i.mobil.model.Personal;
-import i.mobil.model.Motobike;
+Rs0 f6 actionCode 'import i.mobil.Personal;
+import i.mobil.Motobike;
 in.motobike = new Motobike();
-in.personal = new Personal();' #txt
+in.personal = new Personal();
+
+out.motobike.types = new java.util.HashMap();
+out.motobike.types.put("Yamaha Exciter 2016","Yamaha Exciter 2016");
+out.motobike.types.put("Honda Airblade 2015","Honda Airblade 2015");
+out.motobike.types.put("Honda Future 2013","Honda Future 2013");' #txt
 Rs0 f6 type i.mobil.RegistrationPage.RegistrationPageData #txt
 Rs0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -173,12 +180,35 @@ Rs0 f13 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Rs0 f13 168 434 112 44 -37 -8 #rect
+Rs0 f13 360 434 112 44 -37 -8 #rect
 Rs0 f13 @|StepIcon #fIcon
-Rs0 f14 expr out #txt
-Rs0 f14 109 456 168 456 #arcP
 Rs0 f5 expr out #txt
-Rs0 f5 280 456 403 456 #arcP
+Rs0 f5 472 456 595 456 #arcP
+Rs0 f14 actionDecl 'i.mobil.RegistrationPage.RegistrationPageData out;
+' #txt
+Rs0 f14 actionTable 'out=in;
+' #txt
+Rs0 f14 actionCode 'import i.mobil.service.DefaultDatabaseService;
+import i.mobil.service.DatabaseService;
+
+DatabaseService service = new DefaultDatabaseService();
+service.persit(in.motobike, in.personal, in.motobikeNumberPlate);' #txt
+Rs0 f14 type i.mobil.RegistrationPage.RegistrationPageData #txt
+Rs0 f14 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>persist to db</name>
+        <nameStyle>13,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Rs0 f14 176 434 112 44 -34 -8 #rect
+Rs0 f14 @|StepIcon #fIcon
+Rs0 f15 expr out #txt
+Rs0 f15 109 456 176 456 #arcP
+Rs0 f16 expr out #txt
+Rs0 f16 288 456 360 456 #arcP
 >Proto Rs0 .type i.mobil.RegistrationPage.RegistrationPageData #txt
 >Proto Rs0 .processKind HTML_DIALOG #txt
 >Proto Rs0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -213,7 +243,9 @@ Rs0 f8 mainOut f12 tail #connect
 Rs0 f12 head f11 mainIn #connect
 Rs0 f11 mainOut f10 tail #connect
 Rs0 f10 head f9 mainIn #connect
-Rs0 f3 mainOut f14 tail #connect
-Rs0 f14 head f13 mainIn #connect
 Rs0 f13 mainOut f5 tail #connect
 Rs0 f5 head f4 mainIn #connect
+Rs0 f3 mainOut f15 tail #connect
+Rs0 f15 head f14 mainIn #connect
+Rs0 f14 mainOut f16 tail #connect
+Rs0 f16 head f13 mainIn #connect

@@ -1,7 +1,7 @@
 package i.mobil.service;
 
-import i.mobil.model.Motobike;
-import i.mobil.model.Personal;
+import i.mobil.Motobike;
+import i.mobil.Personal;
 import i.mobil.model.SignalData;
 
 public class DefaultSignalService implements SignalService {

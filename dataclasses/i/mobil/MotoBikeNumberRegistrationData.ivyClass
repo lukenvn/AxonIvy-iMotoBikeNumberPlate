@@ -1,8 +1,8 @@
 MotoBikeNumberRegistrationData #class
 i.mobil #namespace
-personal i.mobil.model.Personal #field
+personal i.mobil.Personal #field
 personal PERSISTENT #fieldModifier
-motobike i.mobil.model.Motobike #field
+motobike i.mobil.Motobike #field
 motobike PERSISTENT #fieldModifier
 motobikeNumberPlate String #field
 motobikeNumberPlate PERSISTENT #fieldModifier

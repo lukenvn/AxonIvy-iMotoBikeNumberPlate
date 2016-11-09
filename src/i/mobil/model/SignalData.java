@@ -2,23 +2,23 @@ package i.mobil.model;
 
 public class SignalData {
 	
-	private Motobike motobike;
-	private Personal personal;
+	private i.mobil.Motobike motobike;
+	private i.mobil.Personal personal;
 	private String motoBikeNumberPlate;
 	
-	public Motobike getMotobike() {
+	public i.mobil.Motobike getMotobike() {
 		return motobike;
 	}
 	
-	public void setMotobike(Motobike motobike) {
+	public void setMotobike(i.mobil.Motobike motobike) {
 		this.motobike = motobike;
 	}
 	
-	public Personal getPersonal() {
+	public i.mobil.Personal getPersonal() {
 		return personal;
 	}
 	
-	public void setPersonal(Personal personal) {
+	public void setPersonal(i.mobil.Personal personal) {
 		this.personal = personal;
 	}
 	

@@ -7,15 +7,15 @@ package i.mobil.ApprovingPage;
 public class ApprovingPageData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -6682663016207469679L;
+  private static final long serialVersionUID = -2872130037915569263L;
 
-  private i.mobil.model.Personal personal;
+  private i.mobil.Personal personal;
 
   /**
    * Gets the field personal.
    * @return the value of the field personal; may be null.
    */
-  public i.mobil.model.Personal getPersonal()
+  public i.mobil.Personal getPersonal()
   {
     return personal;
   }
@@ -24,18 +24,18 @@ public class ApprovingPageData extends ch.ivyteam.ivy.scripting.objects.Composit
    * Sets the field personal.
    * @param _personal the new value of the field personal.
    */
-  public void setPersonal(i.mobil.model.Personal _personal)
+  public void setPersonal(i.mobil.Personal _personal)
   {
     personal = _personal;
   }
 
-  private i.mobil.model.Motobike motobike;
+  private i.mobil.Motobike motobike;
 
   /**
    * Gets the field motobike.
    * @return the value of the field motobike; may be null.
    */
-  public i.mobil.model.Motobike getMotobike()
+  public i.mobil.Motobike getMotobike()
   {
     return motobike;
   }
@@ -44,7 +44,7 @@ public class ApprovingPageData extends ch.ivyteam.ivy.scripting.objects.Composit
    * Sets the field motobike.
    * @param _motobike the new value of the field motobike.
    */
-  public void setMotobike(i.mobil.model.Motobike _motobike)
+  public void setMotobike(i.mobil.Motobike _motobike)
   {
     motobike = _motobike;
   }

@@ -1,0 +1,25 @@
+GeneratedMotorbikeNumberPlate #class
+true #isEntity
+i.mobil #namespace
+generatedMotorbikeNumberPlate #dbTableName
+id Integer #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+id GENERATED #fieldModifier
+personalId i.mobil.Personal #field
+personalId personal_id #dbFieldName
+personalId PERSISTENT #fieldModifier
+personalId ONE_TO_ONE #fieldAssociation
+personalId MERGE REMOVE REFRESH #fieldCascadeTypes
+motobikeId i.mobil.Motobike #field
+motobikeId motobike_id #dbFieldName
+motobikeId PERSISTENT #fieldModifier
+motobikeId ONE_TO_ONE #fieldAssociation
+motobikeId MERGE REMOVE REFRESH #fieldCascadeTypes
+generatedNumber String #field
+generatedNumber generated_number #dbFieldName
+generatedNumber PERSISTENT #fieldModifier
+taskState String #field
+taskState task_state #dbFieldName
+taskState PERSISTENT #fieldModifier

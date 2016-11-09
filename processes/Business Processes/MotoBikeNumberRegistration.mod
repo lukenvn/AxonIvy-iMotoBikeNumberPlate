@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Nov 08 16:00:44 ICT 2016]
+[>Created: Wed Nov 09 08:55:33 ICT 2016]
 1582942613099F76 3.18 #module
 >Proto >Proto Collection #zClass
 Mn0 MotoBikeNumberRegistration Big #zClass
@@ -20,11 +20,11 @@ Mn0 @PushWFArc f4 '' #zField
 Mn0 @RichDialog f6 '' #zField
 Mn0 @PushWFArc f2 '' #zField
 Mn0 @TaskSwitchSimple f5 '' #zField
-Mn0 @PushWFArc f8 '' #zField
 Mn0 @SignalStartEvent f7 '' #zField
 Mn0 @EndTask f10 '' #zField
 Mn0 @PushWFArc f11 '' #zField
 Mn0 @TkArc f9 '' #zField
+Mn0 @PushWFArc f8 '' #zField
 >Proto Mn0 Mn0 MotoBikeNumberRegistration #zField
 Mn0 f0 outLink start.ivp #txt
 Mn0 f0 type i.mobil.MotoBikeNumberRegistrationData #txt
@@ -46,7 +46,7 @@ Mn0 f0 @C|.responsibility Everybody #txt
 Mn0 f0 81 49 30 30 -21 17 #rect
 Mn0 f0 @|StartRequestIcon #fIcon
 Mn0 f1 type i.mobil.MotoBikeNumberRegistrationData #txt
-Mn0 f1 689 273 30 30 0 15 #rect
+Mn0 f1 713 273 30 30 0 15 #rect
 Mn0 f1 @|EndIcon #fIcon
 Mn0 f3 targetWindow NEW:card: #txt
 Mn0 f3 targetDisplay TOP #txt
@@ -81,9 +81,9 @@ Mn0 f4 111 64 216 64 #arcP
 Mn0 f6 targetWindow NEW:card: #txt
 Mn0 f6 targetDisplay TOP #txt
 Mn0 f6 richDialogId i.mobil.ApprovingPage #txt
-Mn0 f6 startMethod start(i.mobil.model.Personal,i.mobil.model.Motobike,String) #txt
+Mn0 f6 startMethod start(i.mobil.Personal,i.mobil.Motobike,String) #txt
 Mn0 f6 type i.mobil.MotoBikeNumberRegistrationData #txt
-Mn0 f6 requestActionDecl '<i.mobil.model.Personal personal, i.mobil.model.Motobike motobike, String motobikeNumberPlate> param;' #txt
+Mn0 f6 requestActionDecl '<i.mobil.Personal personal, i.mobil.Motobike motobike, String motobikeNumberPlate> param;' #txt
 Mn0 f6 requestMappingAction 'param.personal=in.personal;
 param.motobike=in.motobike;
 param.motobikeNumberPlate=in.motobikeNumberPlate;
@@ -105,10 +105,10 @@ Mn0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Mn0 f6 472 266 112 44 -43 -8 #rect
+Mn0 f6 496 266 112 44 -43 -8 #rect
 Mn0 f6 @|RichDialogIcon #fIcon
 Mn0 f2 expr out #txt
-Mn0 f2 584 288 689 288 #arcP
+Mn0 f2 608 288 713 288 #arcP
 Mn0 f5 actionDecl 'i.mobil.MotoBikeNumberRegistrationData out;
 ' #txt
 Mn0 f5 actionTable 'out=in1;
@@ -150,9 +150,6 @@ Mn0 f5 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 Mn0 f5 289 273 30 30 -66 17 #rect
 Mn0 f5 @|TaskSwitchSimpleIcon #fIcon
-Mn0 f8 expr data #txt
-Mn0 f8 outCond ivp=="TaskA.ivp" #txt
-Mn0 f8 319 288 472 288 #arcP
 Mn0 f7 actionDecl 'i.mobil.MotoBikeNumberRegistrationData out;
 ' #txt
 Mn0 f7 actionTable 'out.personal.fullName=signal.toString();
@@ -183,6 +180,9 @@ Mn0 f11 328 64 449 64 #arcP
 Mn0 f9 type i.mobil.MotoBikeNumberRegistrationData #txt
 Mn0 f9 var in1 #txt
 Mn0 f9 135 288 289 288 #arcP
+Mn0 f8 expr data #txt
+Mn0 f8 outCond ivp=="TaskA.ivp" #txt
+Mn0 f8 319 288 496 288 #arcP
 >Proto Mn0 .type i.mobil.MotoBikeNumberRegistrationData #txt
 >Proto Mn0 .processKind NORMAL #txt
 >Proto Mn0 0 0 32 24 18 0 #rect
@@ -191,9 +191,9 @@ Mn0 f0 mainOut f4 tail #connect
 Mn0 f4 head f3 mainIn #connect
 Mn0 f6 mainOut f2 tail #connect
 Mn0 f2 head f1 mainIn #connect
-Mn0 f5 out f8 tail #connect
-Mn0 f8 head f6 mainIn #connect
 Mn0 f7 mainOut f9 tail #connect
 Mn0 f9 head f5 in #connect
 Mn0 f3 mainOut f11 tail #connect
 Mn0 f11 head f10 mainIn #connect
+Mn0 f5 out f8 tail #connect
+Mn0 f8 head f6 mainIn #connect
