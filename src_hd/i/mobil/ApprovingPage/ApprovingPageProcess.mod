@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Wed Nov 09 10:40:59 ICT 2016]
+[>Created: Wed Nov 09 11:06:11 ICT 2016]
 1582DACC91FB4C22 3.18 #module
 >Proto >Proto Collection #zClass
 As0 ApprovingPageProcess Big #zClass
@@ -27,7 +27,6 @@ As0 @PushWFArc f10 '' #zField
 As0 @PushWFArc f8 '' #zField
 As0 @RichDialogProcessStart f11 '' #zField
 As0 @EMail f13 '' #zField
-As0 @EMail f16 '' #zField
 As0 @RichDialogProcessStart f18 '' #zField
 As0 @GridStep f21 '' #zField
 As0 @PushWFArc f22 '' #zField
@@ -38,15 +37,21 @@ As0 @PushWFArc f14 '' #zField
 As0 @GridStep f25 '' #zField
 As0 @PushWFArc f26 '' #zField
 As0 @Alternative f28 '' #zField
-As0 @PushWFArc f30 '' #zField
 As0 @PushWFArc f29 '' #zField
 As0 @GridStep f33 '' #zField
 As0 @PushWFArc f34 '' #zField
 As0 @RichDialogProcessEnd f35 '' #zField
 As0 @PushWFArc f36 '' #zField
 As0 @PushWFArc f15 '' #zField
-As0 @PushWFArc f27 '' #zField
+As0 @PushWFArc f30 '' #zField
+As0 @EMail f16 '' #zField
+As0 @GridStep f12 '' #zField
+As0 @PushWFArc f17 '' #zField
+As0 @RichDialogProcessEnd f19 '' #zField
 As0 @PushWFArc f20 '' #zField
+As0 @GridStep f27 '' #zField
+As0 @PushWFArc f31 '' #zField
+As0 @PushWFArc f32 '' #zField
 >Proto As0 As0 ApprovingPageProcess #zField
 As0 f0 guid 1582DACC93B92C5F #txt
 As0 f0 type i.mobil.ApprovingPage.ApprovingPageData #txt
@@ -170,20 +175,6 @@ As0 f13 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 As0 f13 208 626 128 44 -55 -8 #rect
 As0 f13 @|EMailIcon #fIcon
-As0 f16 beanConfig '"{/emailSubject ""Inform Reject Email""/emailFrom ""approve.team@axonactive.com""/emailReplyTo """"/emailTo ""<%=in.personal.email%>""/emailCC """"/emailBCC """"/exceptionMissingEmailAttachments ""false""/emailMessage ""Dear <%=in.personal.fullName%>, \\n\\nPlease inform that your motobike number plate <%=in.motobikeNumberPlate%> has beean REJECTED by  <%=in.approverName%>.\\n\\nRegards,""/emailAttachments * }"' #txt
-As0 f16 type i.mobil.ApprovingPage.ApprovingPageData #txt
-As0 f16 timeout 0 #txt
-As0 f16 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<elementInfo>
-    <language>
-        <name>Send reject email</name>
-        <nameStyle>17,7
-</nameStyle>
-    </language>
-</elementInfo>
-' #txt
-As0 f16 280 898 112 44 -48 -8 #rect
-As0 f16 @|EMailIcon #fIcon
 As0 f18 guid 15843873DB35BEF8 #txt
 As0 f18 type i.mobil.ApprovingPage.ApprovingPageData #txt
 As0 f18 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
@@ -240,7 +231,7 @@ As0 f24 expr out #txt
 As0 f24 77 648 120 648 #arcP
 As0 f24 0 0.4902353912993984 0 0 #arcLabel
 As0 f14 expr in #txt
-As0 f14 outCond 'in.personal.getEmail() !=null ' #txt
+As0 f14 outCond !in.personal.getEmail().isEmpty() #txt
 As0 f14 152 648 208 648 #arcP
 As0 f25 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
 ' #txt
@@ -262,7 +253,7 @@ As0 f25 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 As0 f25 256 794 176 44 -83 -8 #rect
 As0 f25 @|StepIcon #fIcon
 As0 f26 expr in #txt
-As0 f26 outCond in.personal.getEmail()==null #txt
+As0 f26 outCond in.personal.getEmail().isEmpty() #txt
 As0 f26 136 664 256 816 #arcP
 As0 f26 1 136 816 #addKink
 As0 f26 1 0.10900642030623714 0 0 #arcLabel
@@ -278,9 +269,6 @@ As0 f28 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 As0 f28 187 904 32 32 -33 18 #rect
 As0 f28 @|AlternativeIcon #fIcon
-As0 f30 expr in #txt
-As0 f30 outCond in.personal.getEmail()!=null #txt
-As0 f30 219 920 280 920 #arcP
 As0 f29 expr out #txt
 As0 f29 77 920 187 920 #arcP
 As0 f33 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
@@ -313,15 +301,78 @@ As0 f15 expr out #txt
 As0 f15 432 816 704 661 #arcP
 As0 f15 1 704 816 #addKink
 As0 f15 0 0.9130442600880757 0 0 #arcLabel
-As0 f27 expr out #txt
-As0 f27 392 920 463 670 #arcP
-As0 f27 1 463 920 #addKink
-As0 f27 1 0.24024834848403268 0 0 #arcLabel
-As0 f20 expr in #txt
-As0 f20 outCond 'in.personal.getEmail() ==null' #txt
-As0 f20 203 904 256 816 #arcP
-As0 f20 1 203 816 #addKink
-As0 f20 1 0.10995843523649074 0 0 #arcLabel
+As0 f30 expr in #txt
+As0 f30 outCond !in.personal.getEmail().isEmpty() #txt
+As0 f30 219 920 320 920 #arcP
+As0 f30 0 0.36438136538630883 0 0 #arcLabel
+As0 f16 beanConfig '"{/emailSubject ""Inform Reject Email""/emailFrom ""approve.team@axonactive.com""/emailReplyTo """"/emailTo ""<%=in.personal.email%>""/emailCC """"/emailBCC """"/exceptionMissingEmailAttachments ""false""/emailMessage ""Dear <%=in.personal.fullName%>, \\n\\nPlease inform that your motobike number plate <%=in.motobikeNumberPlate%> has beean REJECTED by  <%=in.approverName%>.\\n\\nRegards,""/emailAttachments * }"' #txt
+As0 f16 type i.mobil.ApprovingPage.ApprovingPageData #txt
+As0 f16 timeout 0 #txt
+As0 f16 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Send reject email</name>
+        <nameStyle>17,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+As0 f16 320 898 112 44 -48 -8 #rect
+As0 f16 @|EMailIcon #fIcon
+As0 f12 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
+' #txt
+As0 f12 actionTable 'out=in;
+' #txt
+As0 f12 actionCode 'import org.primefaces.context.RequestContext;
+RequestContext context = RequestContext.getCurrentInstance();
+context.execute("PF(''successEmailDialog'').show();");' #txt
+As0 f12 type i.mobil.ApprovingPage.ApprovingPageData #txt
+As0 f12 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Show Success Message For User</name>
+        <nameStyle>29,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+As0 f12 558 898 192 44 -93 -8 #rect
+As0 f12 @|StepIcon #fIcon
+As0 f17 expr out #txt
+As0 f17 432 920 558 920 #arcP
+As0 f19 type i.mobil.ApprovingPage.ApprovingPageData #txt
+As0 f19 822 907 26 26 0 12 #rect
+As0 f19 @|RichDialogProcessEndIcon #fIcon
+As0 f20 expr out #txt
+As0 f20 750 920 822 920 #arcP
+As0 f27 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
+' #txt
+As0 f27 actionTable 'out=in;
+' #txt
+As0 f27 actionCode 'import org.primefaces.context.RequestContext;
+RequestContext context = RequestContext.getCurrentInstance();
+context.execute("PF(''faildedEmailDialog'').show();");' #txt
+As0 f27 type i.mobil.ApprovingPage.ApprovingPageData #txt
+As0 f27 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Show Error Message For User</name>
+        <nameStyle>27,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+As0 f27 309 1018 176 44 -83 -8 #rect
+As0 f27 @|StepIcon #fIcon
+As0 f31 expr in #txt
+As0 f31 outCond in.personal.getEmail().isEmpty() #txt
+As0 f31 203 936 309 1040 #arcP
+As0 f31 1 200 1040 #addKink
+As0 f31 1 0.32825861184445343 0 0 #arcLabel
+As0 f32 expr out #txt
+As0 f32 485 1040 834 932 #arcP
+As0 f32 1 832 1040 #addKink
+As0 f32 0 0.6636527821183164 0 0 #arcLabel
 >Proto As0 .type i.mobil.ApprovingPage.ApprovingPageData #txt
 >Proto As0 .processKind HTML_DIALOG #txt
 >Proto As0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -384,7 +435,11 @@ As0 f33 mainOut f36 tail #connect
 As0 f36 head f35 mainIn #connect
 As0 f25 mainOut f15 tail #connect
 As0 f15 head f35 mainIn #connect
-As0 f16 mainOut f27 tail #connect
-As0 f27 head f33 mainIn #connect
-As0 f28 out f20 tail #connect
-As0 f20 head f25 mainIn #connect
+As0 f16 mainOut f17 tail #connect
+As0 f17 head f12 mainIn #connect
+As0 f12 mainOut f20 tail #connect
+As0 f20 head f19 mainIn #connect
+As0 f28 out f31 tail #connect
+As0 f31 head f27 mainIn #connect
+As0 f27 mainOut f32 tail #connect
+As0 f32 head f19 mainIn #connect
