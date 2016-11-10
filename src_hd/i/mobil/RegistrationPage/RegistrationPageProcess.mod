@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Nov 08 15:53:20 ICT 2016]
+[>Created: Thu Nov 10 17:05:09 ICT 2016]
 158297BD29ACB0F7 3.18 #module
 >Proto >Proto Collection #zClass
 Rs0 RegistrationPageProcess Big #zClass
@@ -24,12 +24,12 @@ Rs0 @PushWFArc f7 '' #zField
 Rs0 @PushWFArc f2 '' #zField
 Rs0 @RichDialogProcessStart f8 '' #zField
 Rs0 @RichDialogProcessEnd f9 '' #zField
-Rs0 @GridStep f11 '' #zField
-Rs0 @PushWFArc f12 '' #zField
-Rs0 @PushWFArc f10 '' #zField
 Rs0 @GridStep f13 '' #zField
 Rs0 @PushWFArc f14 '' #zField
 Rs0 @PushWFArc f5 '' #zField
+Rs0 @WSElement f15 '' #zField
+Rs0 @PushWFArc f16 '' #zField
+Rs0 @PushWFArc f10 '' #zField
 >Proto Rs0 Rs0 RegistrationPageProcess #zField
 Rs0 f0 guid 158297BD2B94BDF2 #txt
 Rs0 f0 type i.mobil.RegistrationPage.RegistrationPageData #txt
@@ -121,36 +121,8 @@ Rs0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 Rs0 f8 83 275 26 26 -85 15 #rect
 Rs0 f8 @|RichDialogProcessStartIcon #fIcon
 Rs0 f9 type i.mobil.RegistrationPage.RegistrationPageData #txt
-Rs0 f9 555 275 26 26 0 12 #rect
+Rs0 f9 627 275 26 26 0 12 #rect
 Rs0 f9 @|RichDialogProcessEndIcon #fIcon
-Rs0 f11 actionDecl 'i.mobil.RegistrationPage.RegistrationPageData out;
-' #txt
-Rs0 f11 actionTable 'out=in;
-' #txt
-Rs0 f11 actionCode 'import i.mobil.service.DefaultNumberPlateService;
-import i.mobil.service.NumberPlateService;
-
-
-
-NumberPlateService numberPlateService = new DefaultNumberPlateService();
-in.motobikeNumberPlate = numberPlateService.generateNumberPlate();
-' #txt
-Rs0 f11 type i.mobil.RegistrationPage.RegistrationPageData #txt
-Rs0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<elementInfo>
-    <language>
-        <name>Generate Number</name>
-        <nameStyle>15,7
-</nameStyle>
-    </language>
-</elementInfo>
-' #txt
-Rs0 f11 288 266 112 44 -49 -8 #rect
-Rs0 f11 @|StepIcon #fIcon
-Rs0 f12 expr out #txt
-Rs0 f12 109 288 288 288 #arcP
-Rs0 f10 expr out #txt
-Rs0 f10 400 288 555 288 #arcP
 Rs0 f13 actionDecl 'i.mobil.RegistrationPage.RegistrationPageData out;
 ' #txt
 Rs0 f13 actionTable 'out=in;
@@ -179,6 +151,42 @@ Rs0 f14 expr out #txt
 Rs0 f14 109 456 168 456 #arcP
 Rs0 f5 expr out #txt
 Rs0 f5 280 456 403 456 #arcP
+Rs0 f15 type i.mobil.RegistrationPage.RegistrationPageData #txt
+Rs0 f15 actionDecl 'i.mobil.RegistrationPage.RegistrationPageData out;
+' #txt
+Rs0 f15 actionTable 'out=in;
+out.motobikeNumberPlate=wsResponse.generateNumberPlateResponse.generatedNumberPlate;
+' #txt
+Rs0 f15 cache '{/cache false /invalidation false /scope 0 /groupname ""/lifetime_group "0"/invalidation_time_group ""/identifier ""/lifetime_entry "0"/invalidation_time_entry ""}' #txt
+Rs0 f15 timeout 0 #txt
+Rs0 f15 beanConfig '"KEY_PASSWORD=
+KEY_AXIS_PORTNAME=motorbikeNumberPlateWSPort
+KEY_WEBSERVICECONFIG_ID=1584D7E87E4E8728
+KEY_DOMAIN=
+KEY_REQUEST_PARAMETER_MAPPINGS_OPTIONS_AUTO_INITIALIZE_FIRST_LEVEL_FIELDS=true
+KEY_REQUEST_PARAMETER_MAPPINGS_OPTIONS_MAP_NULL_VALUES=true
+KEY_USERNAME=
+KEY_OPERATION=generateNumberPlate
+KEY_AUTHENTICATION_KIND=0
+KEY_HOST=
+KEY_USE_AUTHENTICATION=false
+KEY_AXIS_CSL_PARAMETER_DATA="' #txt
+Rs0 f15 returningObjectList '[wsResponse]' #txt
+Rs0 f15 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>call webservice for motorbike number plate</name>
+        <nameStyle>42,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Rs0 f15 208 266 240 44 -117 -8 #rect
+Rs0 f15 @|WebServiceIcon #fIcon
+Rs0 f16 expr out #txt
+Rs0 f16 109 288 208 288 #arcP
+Rs0 f10 expr out #txt
+Rs0 f10 448 288 627 288 #arcP
 >Proto Rs0 .type i.mobil.RegistrationPage.RegistrationPageData #txt
 >Proto Rs0 .processKind HTML_DIALOG #txt
 >Proto Rs0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -209,11 +217,11 @@ Rs0 f0 mainOut f7 tail #connect
 Rs0 f7 head f6 mainIn #connect
 Rs0 f6 mainOut f2 tail #connect
 Rs0 f2 head f1 mainIn #connect
-Rs0 f8 mainOut f12 tail #connect
-Rs0 f12 head f11 mainIn #connect
-Rs0 f11 mainOut f10 tail #connect
-Rs0 f10 head f9 mainIn #connect
 Rs0 f3 mainOut f14 tail #connect
 Rs0 f14 head f13 mainIn #connect
 Rs0 f13 mainOut f5 tail #connect
 Rs0 f5 head f4 mainIn #connect
+Rs0 f8 mainOut f16 tail #connect
+Rs0 f16 head f15 mainIn #connect
+Rs0 f15 mainOut f10 tail #connect
+Rs0 f10 head f9 mainIn #connect

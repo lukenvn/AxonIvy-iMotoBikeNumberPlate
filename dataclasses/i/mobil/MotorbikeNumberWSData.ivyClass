@@ -1,0 +1,4 @@
+MotorbikeNumberWSData #class
+i.mobil #namespace
+generatedMotobikeNumberPlate String #field
+generatedMotobikeNumberPlate PERSISTENT #fieldModifier

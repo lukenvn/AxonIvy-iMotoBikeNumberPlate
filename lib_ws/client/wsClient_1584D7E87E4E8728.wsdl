@@ -1,0 +1,61 @@
+<?xml version="1.0" ?><wsdl:definitions name="motorbikeNumberPlateWSService" targetNamespace="http://mobil.i/" xmlns:ns1="ch.ivyteam.ivy.webservice.process" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://mobil.i/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://mobil.i/" version="1.0" xmlns:tns="http://mobil.i/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="generateNumberPlate" type="tns:generateNumberPlate"></xs:element>
+<xs:element name="generateNumberPlateResponse" type="tns:generateNumberPlateResponse"></xs:element>
+<xs:complexType name="generateNumberPlate">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+<xs:complexType name="generateNumberPlateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="generatedNumberPlate" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="ch.ivyteam.ivy.webservice.process" xmlns:tns="ch.ivyteam.ivy.webservice.process" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="TechnicalException" nillable="true" type="xsd:string"></xsd:element>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="generateNumberPlate">
+    <wsdl:part element="tns:generateNumberPlate" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WebServiceProcessTechnicalException">
+    <wsdl:part element="ns1:TechnicalException" name="WebServiceProcessTechnicalException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="generateNumberPlateResponse">
+    <wsdl:part element="tns:generateNumberPlateResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="motorbikeNumberPlateWS">
+    <wsdl:operation name="generateNumberPlate">
+      <wsdl:input message="tns:generateNumberPlate" name="generateNumberPlate">
+    </wsdl:input>
+      <wsdl:output message="tns:generateNumberPlateResponse" name="generateNumberPlateResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:WebServiceProcessTechnicalException" name="WebServiceProcessTechnicalException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="motorbikeNumberPlateWSServiceSoapBinding" type="tns:motorbikeNumberPlateWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <wsdl:operation name="generateNumberPlate">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="generateNumberPlate">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="generateNumberPlateResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+      <wsdl:fault name="WebServiceProcessTechnicalException">
+        <soap:fault name="WebServiceProcessTechnicalException" use="literal"></soap:fault>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="motorbikeNumberPlateWSService">
+    <wsdl:port binding="tns:motorbikeNumberPlateWSServiceSoapBinding" name="motorbikeNumberPlateWSPort">
+      <soap:address location="http://127.0.0.1:8081/ivy/ws/designer/iMotoBikeNumberPlate/1584D7A4C38BBD3C"></soap:address>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
