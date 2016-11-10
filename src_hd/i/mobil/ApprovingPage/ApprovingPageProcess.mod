@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Nov 10 16:22:23 ICT 2016]
+[>Created: Thu Nov 10 18:32:46 ICT 2016]
 1582DACC91FB4C22 3.18 #module
 >Proto >Proto Collection #zClass
 As0 ApprovingPageProcess Big #zClass
@@ -196,7 +196,13 @@ As0 f21 actionDecl 'i.mobil.ApprovingPage.ApprovingPageData out;
 ' #txt
 As0 f21 actionTable 'out=in;
 ' #txt
-As0 f21 actionCode '
+As0 f21 actionCode 'import java.util.HashMap;
+in.motobike.types = new HashMap();
+in.motobike.types.put("Yamaha","Yamaha");
+in.motobike.types.put("Suzuki","Suzuki");
+in.motobike.types.put("Honda","Honda");
+in.motobike.types.put("Kawasaki","Kawasaki");
+
 
 in.approverName =ivy.session.getSessionUserName();' #txt
 As0 f21 type i.mobil.ApprovingPage.ApprovingPageData #txt
