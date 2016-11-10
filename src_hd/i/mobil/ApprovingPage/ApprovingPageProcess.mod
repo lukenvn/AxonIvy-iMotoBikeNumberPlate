@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Nov 10 14:03:26 ICT 2016]
+[>Created: Thu Nov 10 16:22:23 ICT 2016]
 1582DACC91FB4C22 3.18 #module
 >Proto >Proto Collection #zClass
 As0 ApprovingPageProcess Big #zClass
@@ -55,10 +55,10 @@ As0 @PushWFArc f32 '' #zField
 >Proto As0 As0 ApprovingPageProcess #zField
 As0 f0 guid 1582DACC93B92C5F #txt
 As0 f0 type i.mobil.ApprovingPage.ApprovingPageData #txt
-As0 f0 method start(i.mobil.model.Personal,i.mobil.model.Motobike,String) #txt
+As0 f0 method start(i.mobil.Person,i.mobil.MotorBike,String) #txt
 As0 f0 disableUIEvents true #txt
 As0 f0 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<i.mobil.model.Personal personal,i.mobil.model.Motobike motobike,java.lang.String motobikeNumberPlate> param = methodEvent.getInputArguments();
+<i.mobil.Person personal,i.mobil.MotorBike motobike,java.lang.String motobikeNumberPlate> param = methodEvent.getInputArguments();
 ' #txt
 As0 f0 inParameterMapAction 'out.motobike=param.motobike;
 out.motobikeNumberPlate=param.motobikeNumberPlate;

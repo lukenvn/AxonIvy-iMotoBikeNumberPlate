@@ -1,0 +1,19 @@
+Person #class
+true #isEntity
+i.mobil #namespace
+Person #dbTableName
+autoId Long #field
+autoId Identifier #fieldComment
+autoId PERSISTENT #fieldModifier
+autoId ID #fieldModifier
+autoId GENERATED #fieldModifier
+fullName String #field
+fullName PERSISTENT #fieldModifier
+id String #field
+id PERSISTENT #fieldModifier
+email String #field
+email PERSISTENT #fieldModifier
+birthDay java.util.Date #field
+birthDay PERSISTENT #fieldModifier
+address String #field
+address PERSISTENT #fieldModifier

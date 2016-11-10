@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Nov 08 15:53:20 ICT 2016]
+[>Created: Thu Nov 10 16:55:49 ICT 2016]
 158297BD29ACB0F7 3.18 #module
 >Proto >Proto Collection #zClass
 Rs0 RegistrationPageProcess Big #zClass
@@ -38,7 +38,7 @@ Rs0 f0 disableUIEvents true #txt
 Rs0 f0 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
 <> param = methodEvent.getInputArguments();
 ' #txt
-Rs0 f0 outParameterDecl '<i.mobil.model.Personal personal,i.mobil.model.Motobike motobike,java.lang.String motobikeNumberPlate> result;
+Rs0 f0 outParameterDecl '<i.mobil.Person personal,i.mobil.MotorBike motobike,java.lang.String motobikeNumberPlate> result;
 ' #txt
 Rs0 f0 outParameterMapAction 'result.personal=in.personal;
 result.motobike=in.motobike;
@@ -83,10 +83,19 @@ Rs0 f6 actionDecl 'i.mobil.RegistrationPage.RegistrationPageData out;
 ' #txt
 Rs0 f6 actionTable 'out=in;
 ' #txt
-Rs0 f6 actionCode 'import i.mobil.model.Personal;
-import i.mobil.model.Motobike;
-in.motobike = new Motobike();
-in.personal = new Personal();' #txt
+Rs0 f6 actionCode 'import java.util.HashMap;
+import i.mobil.Person;
+import i.mobil.MotorBike;
+
+in.motobike = new MotorBike();
+in.personal = new Person();
+
+in.motobike.types = new HashMap();
+in.motobike.types.put("Yamaha","Yamaha");
+in.motobike.types.put("Suzuki","Suzuki");
+in.motobike.types.put("Honda","Honda");
+in.motobike.types.put("Kawasaki","Kawasaki");
+' #txt
 Rs0 f6 type i.mobil.RegistrationPage.RegistrationPageData #txt
 Rs0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -131,7 +140,6 @@ Rs0 f11 actionCode 'import i.mobil.service.DefaultNumberPlateService;
 import i.mobil.service.NumberPlateService;
 
 
-
 NumberPlateService numberPlateService = new DefaultNumberPlateService();
 in.motobikeNumberPlate = numberPlateService.generateNumberPlate();
 ' #txt
@@ -155,10 +163,12 @@ Rs0 f13 actionDecl 'i.mobil.RegistrationPage.RegistrationPageData out;
 ' #txt
 Rs0 f13 actionTable 'out=in;
 ' #txt
-Rs0 f13 actionCode 'import i.mobil.service.DefaultSignalService;
+Rs0 f13 actionCode '
+import i.mobil.service.DefaultSignalService;
 import i.mobil.service.SignalService;
 import i.mobil.model.SignalData;
 import ch.ivyteam.ivy.process.model.value.SignalCode;
+
 
 SignalService service = new DefaultSignalService();
 SignalData signalData = service.setDataForSignal(in.motobike, in.personal, in.motobikeNumberPlate);
