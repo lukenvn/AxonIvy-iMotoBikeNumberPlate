@@ -1,2 +1,3 @@
-co: name={approveConfirmMessage} description={} changed={2016-11-09 03:10:00 CET} changedby={nvnhung} visualorder={0} guid={15846D44948565BA} parentguid={} typeguid={E6AFEA2034301F66} id={} parentid={} typeid={}
+co: name={approveConfirmMessage} description={} changed={2016-11-10 05:20:39 CET} changedby={nvnhung} visualorder={0} guid={15846D44948565BA} parentguid={} typeguid={E6AFEA2034301F66} id={} parentid={} typeid={}
 val: guid={15846D44954FE9BC} datatype={} isdefault={true} langid={en} description={} validfrom={2016-11-09 03:04:27 CET} validto={} changed={2016-11-09 03:04:27 CET} changedby={nvnhung} properties={} id={}
+val: guid={1584C775572EA4FE} datatype={} isdefault={false} langid={fr} description={} validfrom={2016-11-10 05:20:36 CET} validto={} changed={2016-11-10 05:20:38 CET} changedby={nvnhung} properties={} id={}

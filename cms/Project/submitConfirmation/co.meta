@@ -1,2 +1,3 @@
-co: name={submitConfirmation} description={} changed={2016-11-08 09:04:40 GMT} changedby={nvnhung} visualorder={0} guid={158432EA80918E1F} parentguid={} typeguid={E6AFEA2034301F66} id={} parentid={} typeid={}
-val: guid={158432EA811E27F0} datatype={} isdefault={true} langid={en} description={} validfrom={2016-11-08 09:04:40 GMT} validto={} changed={2016-11-08 09:04:40 GMT} changedby={nvnhung} properties={} id={}
+co: name={submitConfirmation} description={} changed={2016-11-10 05:16:00 CET} changedby={nvnhung} visualorder={0} guid={158432EA80918E1F} parentguid={} typeguid={E6AFEA2034301F66} id={} parentid={} typeid={}
+val: guid={1584C731472E32A6} datatype={} isdefault={false} langid={fr} description={} validfrom={2016-11-10 05:15:29 CET} validto={} changed={2016-11-10 05:16:00 CET} changedby={nvnhung} properties={} id={}
+val: guid={158432EA811E27F0} datatype={} isdefault={true} langid={en} description={} validfrom={2016-11-08 10:04:40 CET} validto={} changed={2016-11-08 10:04:40 CET} changedby={nvnhung} properties={} id={}
