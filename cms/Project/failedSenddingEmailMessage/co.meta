@@ -1,0 +1,3 @@
+co: name={failedSenddingEmailMessage} description={} changed={2016-11-10 05:19:02 CET} changedby={nvnhung} visualorder={0} guid={158472ED4C3D022D} parentguid={} typeguid={E6AFEA2034301F66} id={} parentid={} typeid={}
+val: guid={1584C75DAC34BE3F} datatype={} isdefault={false} langid={fr} description={} validfrom={2016-11-10 05:18:53 CET} validto={} changed={2016-11-10 05:19:02 CET} changedby={nvnhung} properties={} id={}
+val: guid={158472ED4C4C8764} datatype={} isdefault={true} langid={en} description={} validfrom={2016-11-09 04:43:21 CET} validto={} changed={2016-11-09 04:43:21 CET} changedby={nvnhung} properties={} id={}

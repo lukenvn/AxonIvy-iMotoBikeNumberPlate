@@ -1,0 +1,3 @@
+co: name={notValidEmail} description={} changed={2016-11-10 07:42:12 CET} changedby={nvnhung} visualorder={0} guid={1584CF8B9599C743} parentguid={} typeguid={E6AFEA2034301F66} id={} parentid={} typeid={}
+val: guid={1584CF8EF22B5158} datatype={} isdefault={false} langid={fr} description={} validfrom={2016-11-10 07:42:07 CET} validto={} changed={2016-11-10 07:42:12 CET} changedby={nvnhung} properties={} id={}
+val: guid={1584CF8B95EB37DD} datatype={} isdefault={true} langid={en} description={} validfrom={2016-11-10 07:41:58 CET} validto={} changed={2016-11-10 07:41:58 CET} changedby={nvnhung} properties={} id={}

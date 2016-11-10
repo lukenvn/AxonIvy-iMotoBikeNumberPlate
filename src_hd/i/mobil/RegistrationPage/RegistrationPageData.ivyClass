@@ -1,8 +1,8 @@
 RegistrationPageData #class
 i.mobil.RegistrationPage #namespace
-motobike i.mobil.model.Motobike #field
+motobike i.mobil.MotorBike #field
 motobike PERSISTENT #fieldModifier
 motobikeNumberPlate String #field
 motobikeNumberPlate PERSISTENT #fieldModifier
-personal i.mobil.model.Personal #field
+personal i.mobil.Person #field
 personal PERSISTENT #fieldModifier

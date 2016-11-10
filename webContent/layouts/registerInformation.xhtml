@@ -15,10 +15,12 @@
 				<h:panelGrid columns="1">
 					<h:panelGrid columns="2" styleClass="infoComponent">
 						<p:fieldset styleClass="child-info-component"
+						
 							legend="#{ivy.cms.co('/Project/personalInformation')}">
 							<h:panelGrid columns="2">
 								<p:outputLabel value="#{ivy.cms.co('/Project/fullName')}" />
 								<p:inputText id="fullName" value="#{data.personal.fullName}"
+								   requiredMessage="#{ivy.cms.co('/Project/valueRequire')}"
 									required="true" disabled="#{data.motobikeNumberPlate !=null}">
 									<f:validateLength maximum="100" />
 								</p:inputText>
@@ -26,6 +28,7 @@
 								<p:message for="fullName" display="text" />
 								<p:outputLabel value="#{ivy.cms.co('/Project/id')}" />
 								<p:inputText id="id" value="#{data.personal.id}" required="true"
+								   requiredMessage="#{ivy.cms.co('/Project/valueRequire')}"
 									disabled="#{data.motobikeNumberPlate !=null}"
 									onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;">
 									<f:validateLength maximum="12" />
@@ -33,7 +36,8 @@
 								<br />
 								<p:message for="id" display="text" />
 								<p:outputLabel value="#{ivy.cms.co('/Project/birthDay')}" />
-								<p:calendar id="birthday" value="#{data.personal.birthDay}"
+								<p:calendar id="birthday" value="#{data.personal.birthDay}" 
+								   requiredMessage="#{ivy.cms.co('/Project/valueRequire')}"
 									required="true" disabled="#{data.motobikeNumberPlate !=null}"
 									navigator="true" yearRange="1900:2016">
 									<f:validator validatorId="ageValidator" />
@@ -43,7 +47,7 @@
 								<p:outputLabel value="#{ivy.cms.co('/Project/email')}" />
 								<p:inputText id="email" value="#{data.personal.email}"
 									disabled="#{data.motobikeNumberPlate !=null}"
-									validatorMessage="Not a valid email format">
+									validatorMessage="#{ivy.cms.co('/Project/notValidEmail')}">
 									<f:validateRegex
 										pattern="^$|^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
 								</p:inputText>
@@ -51,6 +55,7 @@
 								<p:message for="email" display="text" />
 								<p:outputLabel value="#{ivy.cms.co('/Project/address')}" />
 								<p:inputTextarea id="address" value="#{data.personal.address}"
+								   requiredMessage="#{ivy.cms.co('/Project/valueRequire')}"
 									required="true" disabled="#{data.motobikeNumberPlate !=null}">
 									<f:validateLength maximum="255" />
 								</p:inputTextarea>
@@ -64,8 +69,9 @@
 								<p:outputLabel value="#{ivy.cms.co('/Project/type')}" />
 								<!-- <p:inputText id="type" value="#{data.motobike.type}" required="true" disabled="#{data.motobikeNumberPlate !=null}"/> -->
 								<p:selectOneMenu id="type" value="#{data.motobike.type}"
+								   requiredMessage="#{ivy.cms.co('/Project/valueRequire')}"
 									required="true" disabled="#{data.motobikeNumberPlate !=null}">
-									<f:selectItem itemLabel="Please choose" itemValue=""
+									<f:selectItem itemLabel="#{ivy.cms.co('/Project/pleaseChoose')}" itemValue=""
 										noSelectionOption="true" />
 									<f:selectItems value="#{data.motobike.types}" />
 								</p:selectOneMenu>
@@ -73,6 +79,7 @@
 								<p:message for="type" display="text" />
 								<p:outputLabel value="#{ivy.cms.co('/Project/chassisNumber')}" />
 								<p:inputText id="chasNum" value="#{data.motobike.chassicNumber}"
+								   requiredMessage="#{ivy.cms.co('/Project/valueRequire')}"
 									required="true" disabled="#{data.motobikeNumberPlate !=null}">
 									<f:validateLength maximum="17" />
 								</p:inputText>
@@ -82,6 +89,7 @@
 									value="#{ivy.cms.co('/Project/chassisFrameNumber')}" />
 								<p:inputText id="chasFramNum"
 									value="#{data.motobike.chassicFrameNumber}" required="true"
+								   requiredMessage="#{ivy.cms.co('/Project/valueRequire')}"
 									disabled="#{data.motobikeNumberPlate !=null}">
 									<f:validateLength maximum="17" />
 								</p:inputText>

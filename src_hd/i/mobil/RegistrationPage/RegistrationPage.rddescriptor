@@ -7,13 +7,13 @@
         <outputParameter>
             <name>personal</name>
             <description></description>
-            <parameterType>i.mobil.model.Personal</parameterType>
+            <parameterType>i.mobil.Person</parameterType>
             <nullPermitted>false</nullPermitted>
         </outputParameter>
         <outputParameter>
             <name>motobike</name>
             <description></description>
-            <parameterType>i.mobil.model.Motobike</parameterType>
+            <parameterType>i.mobil.MotorBike</parameterType>
             <nullPermitted>false</nullPermitted>
         </outputParameter>
         <outputParameter>
