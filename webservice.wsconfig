@@ -1,2 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<webServiceConfigurationNode/>
+<webServiceConfigurationNode>
+    <webServiceConfig>
+        <name>motorbikeNumberPlate</name>
+        <id>1584D7E87E4E8728</id>
+        <wsdlUrl>http://127.0.0.1:8081/ivy/ws/designer/iMotoBikeNumberPlate/1584D7A4C38BBD3C?WSDL</wsdlUrl>
+        <transportSession>false</transportSession>
+        <wsdlGeneratedInfo>
+            <axisLocatorClassname></axisLocatorClassname>
+            <axisNamespacesNew>ch.ivyteam.ivy.webservice.process=process.webservice.ivy.ivyteam.ch
+http\://mobil.i/=i.mobil</axisNamespacesNew>
+            <axisOperationsToPort>motorbikeNumberPlateWSPort="generateNumberPlate"</axisOperationsToPort>
+            <axisEndPointForPortType>motorbikeNumberPlateWSPort=http\://127.0.0.1\:8081/ivy/ws/designer/iMotoBikeNumberPlate/1584D7A4C38BBD3C</axisEndPointForPortType>
+            <axisParameterProperties>motorbikeNumberPlateWSPortgenerateNumberPlate="arg0__@@__i.mobil.GenerateNumberPlateE__@@__"</axisParameterProperties>
+            <axisPortList>motorbikeNumberPlateWSPort</axisPortList>
+            <axisStubClassnameList>i.mobil.MotorbikeNumberPlateWSServiceStub</axisStubClassnameList>
+            <axisReturnTypes>motorbikeNumberPlateWSPortgenerateNumberPlate=i.mobil.GenerateNumberPlateResponseE</axisReturnTypes>
+            <axisServiceClassname>i.mobil.motorbikeNumberPlateWSService</axisServiceClassname>
+            <axisUsedJavaclasses>"i\\mobil\\ExtensionMapper.java","i\\mobil\\GenerateNumberPlate.java","i\\mobil\\GenerateNumberPlateE.java","i\\mobil\\GenerateNumberPlateResponse.java","i\\mobil\\GenerateNumberPlateResponseE.java","i\\mobil\\MotorbikeNumberPlateWSService.java","i\\mobil\\MotorbikeNumberPlateWSServiceStub.java","i\\mobil\\WebServiceProcessTechnicalException.java","process\\webservice\\ivy\\ivyteam\\ch\\TechnicalException.java"</axisUsedJavaclasses>
+            <codeGenerationTimestamp>1478768982042</codeGenerationTimestamp>
+            <wsdlWebserviceName>motorbikeNumberPlateWSService</wsdlWebserviceName>
+            <wsClassGenerationImplementationUsed>AXIS_2_0</wsClassGenerationImplementationUsed>
+            <jarPacked>true</jarPacked>
+        </wsdlGeneratedInfo>
+        <webServiceVersion/>
+    </webServiceConfig>
+</webServiceConfigurationNode>
