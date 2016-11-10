@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Nov 08 16:00:44 ICT 2016]
+[>Created: Thu Nov 10 17:29:50 ICT 2016]
 1582942613099F76 3.18 #module
 >Proto >Proto Collection #zClass
 Mn0 MotoBikeNumberRegistration Big #zClass
@@ -18,13 +18,19 @@ Mn0 @EndTask f1 '' #zField
 Mn0 @RichDialog f3 '' #zField
 Mn0 @PushWFArc f4 '' #zField
 Mn0 @RichDialog f6 '' #zField
-Mn0 @PushWFArc f2 '' #zField
 Mn0 @TaskSwitchSimple f5 '' #zField
-Mn0 @PushWFArc f8 '' #zField
 Mn0 @SignalStartEvent f7 '' #zField
 Mn0 @EndTask f10 '' #zField
 Mn0 @PushWFArc f11 '' #zField
+Mn0 @GridStep f12 '' #zField
+Mn0 @PushWFArc f13 '' #zField
 Mn0 @TkArc f9 '' #zField
+Mn0 @GridStep f14 '' #zField
+Mn0 @PushWFArc f15 '' #zField
+Mn0 @PushWFArc f8 '' #zField
+Mn0 @GridStep f16 '' #zField
+Mn0 @PushWFArc f17 '' #zField
+Mn0 @PushWFArc f2 '' #zField
 >Proto Mn0 Mn0 MotoBikeNumberRegistration #zField
 Mn0 f0 outLink start.ivp #txt
 Mn0 f0 type i.mobil.MotoBikeNumberRegistrationData #txt
@@ -46,7 +52,7 @@ Mn0 f0 @C|.responsibility Everybody #txt
 Mn0 f0 81 49 30 30 -21 17 #rect
 Mn0 f0 @|StartRequestIcon #fIcon
 Mn0 f1 type i.mobil.MotoBikeNumberRegistrationData #txt
-Mn0 f1 689 273 30 30 0 15 #rect
+Mn0 f1 945 273 30 30 0 15 #rect
 Mn0 f1 @|EndIcon #fIcon
 Mn0 f3 targetWindow NEW:card: #txt
 Mn0 f3 targetDisplay TOP #txt
@@ -81,9 +87,9 @@ Mn0 f4 111 64 216 64 #arcP
 Mn0 f6 targetWindow NEW:card: #txt
 Mn0 f6 targetDisplay TOP #txt
 Mn0 f6 richDialogId i.mobil.ApprovingPage #txt
-Mn0 f6 startMethod start(i.mobil.model.Personal,i.mobil.model.Motobike,String) #txt
+Mn0 f6 startMethod start(i.mobil.Person,i.mobil.MotorBike,String) #txt
 Mn0 f6 type i.mobil.MotoBikeNumberRegistrationData #txt
-Mn0 f6 requestActionDecl '<i.mobil.model.Personal personal, i.mobil.model.Motobike motobike, String motobikeNumberPlate> param;' #txt
+Mn0 f6 requestActionDecl '<i.mobil.Person personal, i.mobil.MotorBike motobike, String motobikeNumberPlate> param;' #txt
 Mn0 f6 requestMappingAction 'param.personal=in.personal;
 param.motobike=in.motobike;
 param.motobikeNumberPlate=in.motobikeNumberPlate;
@@ -105,10 +111,8 @@ Mn0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Mn0 f6 472 266 112 44 -43 -8 #rect
+Mn0 f6 616 266 112 44 -43 -8 #rect
 Mn0 f6 @|RichDialogIcon #fIcon
-Mn0 f2 expr out #txt
-Mn0 f2 584 288 689 288 #arcP
 Mn0 f5 actionDecl 'i.mobil.MotoBikeNumberRegistrationData out;
 ' #txt
 Mn0 f5 actionTable 'out=in1;
@@ -148,19 +152,16 @@ Mn0 f5 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Mn0 f5 289 273 30 30 -66 17 #rect
+Mn0 f5 361 273 30 30 -66 17 #rect
 Mn0 f5 @|TaskSwitchSimpleIcon #fIcon
-Mn0 f8 expr data #txt
-Mn0 f8 outCond ivp=="TaskA.ivp" #txt
-Mn0 f8 319 288 472 288 #arcP
 Mn0 f7 actionDecl 'i.mobil.MotoBikeNumberRegistrationData out;
 ' #txt
 Mn0 f7 actionTable 'out.personal.fullName=signal.toString();
 ' #txt
 Mn0 f7 actionCode 'import i.mobil.model.SignalData;
 SignalData data = signal.getSignalData() as SignalData;
-out.motobike = data.motobike;
-out.personal = data.personal;
+out.motobike = data.motorBike;
+out.personal = data.person;
 out.motobikeNumberPlate = data.motoBikeNumberPlate;' #txt
 Mn0 f7 type i.mobil.MotoBikeNumberRegistrationData #txt
 Mn0 f7 signalCode task:created #txt
@@ -180,20 +181,119 @@ Mn0 f10 449 49 30 30 0 15 #rect
 Mn0 f10 @|EndIcon #fIcon
 Mn0 f11 expr out #txt
 Mn0 f11 328 64 449 64 #arcP
+Mn0 f12 actionDecl 'i.mobil.MotoBikeNumberRegistrationData out;
+' #txt
+Mn0 f12 actionTable 'out=in;
+' #txt
+Mn0 f12 actionCode 'import i.mobil.Person;
+import i.mobil.MotorBike;
+
+MotorBike motorbike = ivy.persistence.MotorbileNumberPlate.persist(in.motobike) as MotorBike;
+in.motorbikeId = motorbike.autoId;
+
+Person person = ivy.persistence.MotorbileNumberPlate.persist(in.personal) as Person;
+in.personId = person.autoId;
+
+
+' #txt
+Mn0 f12 type i.mobil.MotoBikeNumberRegistrationData #txt
+Mn0 f12 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Persist Data</name>
+        <nameStyle>12,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Mn0 f12 192 266 112 44 -34 -8 #rect
+Mn0 f12 @|StepIcon #fIcon
+Mn0 f13 135 288 192 288 #arcP
+Mn0 f9 expr out #txt
 Mn0 f9 type i.mobil.MotoBikeNumberRegistrationData #txt
 Mn0 f9 var in1 #txt
-Mn0 f9 135 288 289 288 #arcP
+Mn0 f9 304 288 361 288 #arcP
+Mn0 f14 actionDecl 'i.mobil.MotoBikeNumberRegistrationData out;
+' #txt
+Mn0 f14 actionTable 'out=in;
+' #txt
+Mn0 f14 actionCode 'import i.mobil.Person;
+import i.mobil.MotorBike;
+
+in.motobike = ivy.persistence.MotorbileNumberPlate.find(MotorBike.class,in.motorbikeId) as MotorBike;
+
+
+in.personal = ivy.persistence.MotorbileNumberPlate.find(Person.class,in.personId ) as Person;
+
+
+
+' #txt
+Mn0 f14 type i.mobil.MotoBikeNumberRegistrationData #txt
+Mn0 f14 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Restore Data</name>
+        <nameStyle>12,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Mn0 f14 448 266 112 44 -36 -8 #rect
+Mn0 f14 @|StepIcon #fIcon
+Mn0 f15 expr data #txt
+Mn0 f15 outCond ivp=="TaskA.ivp" #txt
+Mn0 f15 391 288 448 288 #arcP
+Mn0 f8 expr out #txt
+Mn0 f8 560 288 616 288 #arcP
+Mn0 f16 actionDecl 'i.mobil.MotoBikeNumberRegistrationData out;
+' #txt
+Mn0 f16 actionTable 'out=in;
+' #txt
+Mn0 f16 actionCode 'import i.mobil.Person;
+import i.mobil.MotorBike;
+
+ivy.persistence.MotorbileNumberPlate.remove(in.motobike);
+ivy.persistence.MotorbileNumberPlate.remove(in.personal);
+
+
+
+
+' #txt
+Mn0 f16 type i.mobil.MotoBikeNumberRegistrationData #txt
+Mn0 f16 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Delete Data</name>
+        <nameStyle>11,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Mn0 f16 776 266 112 44 -32 -8 #rect
+Mn0 f16 @|StepIcon #fIcon
+Mn0 f17 expr out #txt
+Mn0 f17 728 288 776 288 #arcP
+Mn0 f17 0 0.5693507267587348 0 0 #arcLabel
+Mn0 f2 expr out #txt
+Mn0 f2 888 288 945 288 #arcP
+Mn0 f2 0 0.5693507267587348 0 0 #arcLabel
 >Proto Mn0 .type i.mobil.MotoBikeNumberRegistrationData #txt
 >Proto Mn0 .processKind NORMAL #txt
 >Proto Mn0 0 0 32 24 18 0 #rect
 >Proto Mn0 @|BIcon #fIcon
 Mn0 f0 mainOut f4 tail #connect
 Mn0 f4 head f3 mainIn #connect
-Mn0 f6 mainOut f2 tail #connect
-Mn0 f2 head f1 mainIn #connect
-Mn0 f5 out f8 tail #connect
-Mn0 f8 head f6 mainIn #connect
-Mn0 f7 mainOut f9 tail #connect
-Mn0 f9 head f5 in #connect
 Mn0 f3 mainOut f11 tail #connect
 Mn0 f11 head f10 mainIn #connect
+Mn0 f7 mainOut f13 tail #connect
+Mn0 f13 head f12 mainIn #connect
+Mn0 f12 mainOut f9 tail #connect
+Mn0 f9 head f5 in #connect
+Mn0 f5 out f15 tail #connect
+Mn0 f15 head f14 mainIn #connect
+Mn0 f14 mainOut f8 tail #connect
+Mn0 f8 head f6 mainIn #connect
+Mn0 f6 mainOut f17 tail #connect
+Mn0 f17 head f16 mainIn #connect
+Mn0 f16 mainOut f2 tail #connect
+Mn0 f2 head f1 mainIn #connect

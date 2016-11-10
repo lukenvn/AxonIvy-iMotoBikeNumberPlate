@@ -7,15 +7,15 @@ package i.mobil;
 public class MotoBikeNumberRegistrationData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -5847224607397126399L;
+  private static final long serialVersionUID = 7765804158858062184L;
 
-  private i.mobil.model.Personal personal;
+  private transient i.mobil.Person personal;
 
   /**
    * Gets the field personal.
    * @return the value of the field personal; may be null.
    */
-  public i.mobil.model.Personal getPersonal()
+  public i.mobil.Person getPersonal()
   {
     return personal;
   }
@@ -24,18 +24,18 @@ public class MotoBikeNumberRegistrationData extends ch.ivyteam.ivy.scripting.obj
    * Sets the field personal.
    * @param _personal the new value of the field personal.
    */
-  public void setPersonal(i.mobil.model.Personal _personal)
+  public void setPersonal(i.mobil.Person _personal)
   {
     personal = _personal;
   }
 
-  private i.mobil.model.Motobike motobike;
+  private transient i.mobil.MotorBike motobike;
 
   /**
    * Gets the field motobike.
    * @return the value of the field motobike; may be null.
    */
-  public i.mobil.model.Motobike getMotobike()
+  public i.mobil.MotorBike getMotobike()
   {
     return motobike;
   }
@@ -44,7 +44,7 @@ public class MotoBikeNumberRegistrationData extends ch.ivyteam.ivy.scripting.obj
    * Sets the field motobike.
    * @param _motobike the new value of the field motobike.
    */
-  public void setMotobike(i.mobil.model.Motobike _motobike)
+  public void setMotobike(i.mobil.MotorBike _motobike)
   {
     motobike = _motobike;
   }
@@ -87,6 +87,46 @@ public class MotoBikeNumberRegistrationData extends ch.ivyteam.ivy.scripting.obj
   public void setApproverName(java.lang.String _approverName)
   {
     approverName = _approverName;
+  }
+
+  private java.lang.Long motorbikeId;
+
+  /**
+   * Gets the field motorbikeId.
+   * @return the value of the field motorbikeId; may be null.
+   */
+  public java.lang.Long getMotorbikeId()
+  {
+    return motorbikeId;
+  }
+
+  /**
+   * Sets the field motorbikeId.
+   * @param _motorbikeId the new value of the field motorbikeId.
+   */
+  public void setMotorbikeId(java.lang.Long _motorbikeId)
+  {
+    motorbikeId = _motorbikeId;
+  }
+
+  private java.lang.Long personId;
+
+  /**
+   * Gets the field personId.
+   * @return the value of the field personId; may be null.
+   */
+  public java.lang.Long getPersonId()
+  {
+    return personId;
+  }
+
+  /**
+   * Sets the field personId.
+   * @param _personId the new value of the field personId.
+   */
+  public void setPersonId(java.lang.Long _personId)
+  {
+    personId = _personId;
   }
 
 }

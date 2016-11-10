@@ -1,33 +1,31 @@
 package i.mobil.model;
 
+import i.mobil.MotorBike;
+import i.mobil.Person;
+
 public class SignalData {
 	
-	private Motobike motobike;
-	private Personal personal;
+	private Person person;
+	private MotorBike motorBike;
 	private String motoBikeNumberPlate;
-	
-	public Motobike getMotobike() {
-		return motobike;
+	public Person getPerson() {
+		return person;
 	}
-	
-	public void setMotobike(Motobike motobike) {
-		this.motobike = motobike;
+	public void setPerson(Person person) {
+		this.person = person;
 	}
-	
-	public Personal getPersonal() {
-		return personal;
+	public MotorBike getMotorBike() {
+		return motorBike;
 	}
-	
-	public void setPersonal(Personal personal) {
-		this.personal = personal;
+	public void setMotorBike(MotorBike motorBike) {
+		this.motorBike = motorBike;
 	}
-	
 	public String getMotoBikeNumberPlate() {
 		return motoBikeNumberPlate;
 	}
-	
 	public void setMotoBikeNumberPlate(String motoBikeNumberPlate) {
 		this.motoBikeNumberPlate = motoBikeNumberPlate;
 	}
+
 
 }

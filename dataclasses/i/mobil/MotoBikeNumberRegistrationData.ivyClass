@@ -1,10 +1,12 @@
 MotoBikeNumberRegistrationData #class
 i.mobil #namespace
-personal i.mobil.model.Personal #field
-personal PERSISTENT #fieldModifier
-motobike i.mobil.model.Motobike #field
-motobike PERSISTENT #fieldModifier
+personal i.mobil.Person #field
+motobike i.mobil.MotorBike #field
 motobikeNumberPlate String #field
 motobikeNumberPlate PERSISTENT #fieldModifier
 approverName String #field
 approverName PERSISTENT #fieldModifier
+motorbikeId Long #field
+motorbikeId PERSISTENT #fieldModifier
+personId Long #field
+personId PERSISTENT #fieldModifier
